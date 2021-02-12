@@ -16,7 +16,7 @@ class CodeChefVitBhopalApp extends StatelessWidget {
         ),
         body: Container(
           child: Center(
-            child: Text("Hello world"),
+            child: Text("Test"),
           ),
         ),
       ),
