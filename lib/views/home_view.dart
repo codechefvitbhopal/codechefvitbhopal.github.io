@@ -7,7 +7,6 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_grid/responsive_grid.dart';
-import 'package:responsive_image/responsive_image.dart';
 
 import 'blog_tab.dart';
 
