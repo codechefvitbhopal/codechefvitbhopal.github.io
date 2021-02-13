@@ -1,12 +1,20 @@
-import 'dart:html';
-
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:ccvit/widgets/centeredView/centered_view.dart';
+import 'package:ccvit/views/home_view.dart';
+import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 
-void main() => runApp(MaterialApp(home: CodeChefVitBhopalApp()));
+import 'config/themes.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ThemeSwitcherWidget(
+      initialDarkModeOn: false,
+      child: CodeChefVitBhopalApp(),
+    );
+  }
+}
 
 class CodeChefVitBhopalApp extends StatefulWidget {
   @override
@@ -25,237 +33,13 @@ class _CodeChefVitBhopalAppState extends State<CodeChefVitBhopalApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: MediaQuery.of(context).size.width > 800
-          ? SingleChildScrollView(
-              child: Container(
-                child: Column(
-                  children: [
-                    Stack(
-                      alignment: Alignment.topCenter,
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width,
-                          child: Image.asset(
-                            "assets/images/header.png",
-                          ),
-                        ),
-                        CenteredView(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Image.asset(
-                                "assets/logo/whiteLogo.png",
-                                scale: 1.3,
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  _NavBarItem(child: "HOME"),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  _NavBarItem(child: "TEAM"),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  _NavBarItem(child: "EVENTS"),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  _NavBarItem(child: "ARTICLES"),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  _NavBarItem(child: "LEADERBOARD"),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        Positioned(
-                          top: 120,
-                          width: 1200,
-                          child: Container(
-                            height: 600,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage("assets/images/main.png"),
-                              ),
-                            ),
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    "assets/logo/ccwhite_shadow.png",
-                                    scale: 1.5,
-                                  ),
-                                  Image.asset(
-                                    "assets/images/cc_vit_chapter.png",
-                                    scale: 1.5,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 240,
-                      width: 200,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/images/about-us.png",
-                          ),
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                      child: Container(
-                        height: 700,
-                        width: 1080,
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              top: 80,
-                              left: 80,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "About Us",
-                                    style: TextStyle(
-                                      fontSize: 36,
-                                      fontFamily: "Segoe UI",
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Container(
-                                    width: 460,
-                                    child: AutoSizeText(
-                                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                        fontSize: 22,
-                                        fontFamily: "Segoe UI",
-                                        fontWeight: FontWeight.w100,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 40,
-                                  ),
-                                  Text(
-                                    "About Our Goals",
-                                    style: TextStyle(
-                                      fontSize: 36,
-                                      fontFamily: "Segoe UI",
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Container(
-                                    width: 460,
-                                    child: AutoSizeText(
-                                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                        fontSize: 22,
-                                        fontFamily: "Segoe UI",
-                                        fontWeight: FontWeight.w100,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      child: Image.asset(
-                        "assets/images/events.png",
-                        scale: 2,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      height: 450,
-                      width: 600,
-                      child: Swiper(
-                        itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            margin: EdgeInsets.symmetric(vertical: 50),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(12),
-                                ),
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 16,
-                                    color: Colors.grey.shade300,
-                                    offset: Offset(0, 6),
-                                  )
-                                ]),
-                            child: Image.network(
-                              cardList[index],
-                            ),
-                          );
-                        },
-                        itemCount: 3,
-                        viewportFraction: 0.8,
-                        scale: 0.8,
-                      ),
-                    ),
-                    Text("Hello")
-                  ],
-                ),
-              ),
-            )
-          : Container(
-              child: Center(
-                child: Text(
-                  "Opps!!!\nThis website is not available on mobile please switch to desktop.",
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
-    );
-  }
-}
-
-class _NavBarItem extends StatelessWidget {
-  final String child;
-  const _NavBarItem({Key key, this.child}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        print(child);
-      },
-      child: Text(
-        child,
-        style: TextStyle(
-          fontFamily: "Roboto",
-          color: Colors.white,
-          fontSize: 18,
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Ankit sagar',
+      theme: ThemeSwitcher.of(context).isDarkModeOn
+          ? darkTheme(context)
+          : lightTheme(context),
+      home: HomeView(cardList: cardList),
     );
   }
 }
