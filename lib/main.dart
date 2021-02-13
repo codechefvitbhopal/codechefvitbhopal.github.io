@@ -17,7 +17,7 @@ class CodeChefVitBhopalApp extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width,
                     child: Image.asset(
-                      "images/header.png",
+                      "assets/images/header.png",
                     ),
                   ),
                   CenteredView(
@@ -25,7 +25,7 @@ class CodeChefVitBhopalApp extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Image.asset(
-                          "logo/whiteLogo.png",
+                          "assets/logo/whiteLogo.png",
                           scale: 1.3,
                         ),
                         Row(
@@ -60,7 +60,7 @@ class CodeChefVitBhopalApp extends StatelessWidget {
                       height: 600,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage("images/main.png"),
+                          image: AssetImage("assets/images/main.png"),
                         ),
                       ),
                       child: Center(
@@ -70,11 +70,11 @@ class CodeChefVitBhopalApp extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.asset(
-                              "logo/ccwhite_shadow.png",
+                              "assets/logo/ccwhite_shadow.png",
                               scale: 1.5,
                             ),
                             Image.asset(
-                              "images/cc_vit_chapter.png",
+                              "assets/images/cc_vit_chapter.png",
                               scale: 1.5,
                             ),
                           ],
