@@ -10,4 +10,8 @@ class Constants {
   static const PROFILE_TWITTER = 'https://twitter.com/codechefvitb';
   static const PROFILE_INSTAGRAM =
       'https://www.instagram.com/codechefvitbhopal/';
+  static const YOUTUBE =
+      'https://www.youtube.com/channel/UCnN2MXUF5ufqof-VSsXVn7Q';
+  static const DISCORD =
+      'https://discord.com/channels/776389979466629130/776397809426628628';
 }
