@@ -1,6 +1,8 @@
 import 'package:ccvit/config/assets.dart';
 import 'package:ccvit/config/constants.dart';
-import 'package:ccvit/views/blog_tab.dart';
+import 'package:ccvit/views/blog_view.dart';
+import 'package:ccvit/views/home_view.dart';
+import 'package:ccvit/views/team_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,17 +13,15 @@ import 'centeredView/centered_view.dart';
 import 'dart:html' as html;
 
 class Header extends StatefulWidget {
-  const Header({
-    Key key,
-  }) : super(key: key);
+  final String page;
+  final String active;
+  const Header({Key key, this.page, this.active}) : super(key: key);
 
   @override
   _HeaderState createState() => _HeaderState();
 }
 
 class _HeaderState extends State<Header> {
-  bool _isHover = false;
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -30,7 +30,7 @@ class _HeaderState extends State<Header> {
         Container(
           width: MediaQuery.of(context).size.width,
           child: Image.asset(
-            Assets.header,
+            widget.page == "home" ? Assets.header : Assets.small_header,
             // color: Colors.black,
           ),
         ),
@@ -49,7 +49,41 @@ class _HeaderState extends State<Header> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         _NavBarItem(
-                          child: "HOME",
+                          // child: "HOME",
+                          icon: FontAwesomeIcons.home,
+                          active: widget.active == "home",
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HomeView(),
+                              ),
+                            );
+                          },
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        _NavBarItem(
+                          // child: "TEAM",
+                          icon: FontAwesomeIcons.users,
+                          active: widget.active == "team",
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => TeamView(),
+                                ));
+                          },
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        _NavBarItem(
+                          // child: "EVENTS",
+                          icon: FontAwesomeIcons.calendarCheck,
+
+                          active: widget.active == "event",
                           onPressed: () {
                             // Navigator.push(
                             //     context,
@@ -62,33 +96,10 @@ class _HeaderState extends State<Header> {
                           width: 20,
                         ),
                         _NavBarItem(
-                          child: "TEAM",
-                          onPressed: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //       builder: (context) => BlogTab(),
-                            //     ));
-                          },
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        _NavBarItem(
-                          child: "EVENTS",
-                          onPressed: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //       builder: (context) => BlogTab(),
-                            //     ));
-                          },
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        _NavBarItem(
-                          child: "ARTICLES",
+                          // child: "ARTICLES",
+                          icon: FontAwesomeIcons.newspaper,
+
+                          active: widget.active == "newspaper",
                           onPressed: () {
                             Navigator.push(
                                 context,
@@ -101,7 +112,10 @@ class _HeaderState extends State<Header> {
                           width: 20,
                         ),
                         _NavBarItem(
-                          child: "LEADERBOARD",
+                          // child: "LEADERBOARD",
+                          icon: FontAwesomeIcons.trophy,
+
+                          active: widget.active == "trophy",
                           onPressed: () {
                             // Navigator.push(
                             //     context,
@@ -155,13 +169,14 @@ class _HeaderState extends State<Header> {
                                         sm: 3,
                                         child: _NavBoxItem(
                                           child: "TEAM",
-                                          icon: FontAwesomeIcons.home,
+                                          icon: FontAwesomeIcons.users,
                                           onPressed: () {
-                                            // Navigator.push(
-                                            //     context,
-                                            //     MaterialPageRoute(
-                                            //       builder: (context) => BlogTab(),
-                                            //     ));
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      TeamView(),
+                                                ));
                                           },
                                         ),
                                       ),
@@ -171,7 +186,7 @@ class _HeaderState extends State<Header> {
                                         sm: 3,
                                         child: _NavBoxItem(
                                           child: "EVENTS",
-                                          icon: FontAwesomeIcons.home,
+                                          icon: FontAwesomeIcons.calendarCheck,
                                           onPressed: () {
                                             // Navigator.push(
                                             //     context,
@@ -187,13 +202,14 @@ class _HeaderState extends State<Header> {
                                         sm: 3,
                                         child: _NavBoxItem(
                                           child: "ARTICLES",
-                                          icon: FontAwesomeIcons.home,
+                                          icon: FontAwesomeIcons.newspaper,
                                           onPressed: () {
-                                            // Navigator.push(
-                                            //     context,
-                                            //     MaterialPageRoute(
-                                            //       builder: (context) => BlogTab(),
-                                            //     ));
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      BlogTab(),
+                                                ));
                                           },
                                         ),
                                       ),
@@ -203,7 +219,7 @@ class _HeaderState extends State<Header> {
                                         sm: 3,
                                         child: _NavBoxItem(
                                           child: "LEADERBOARD",
-                                          icon: FontAwesomeIcons.home,
+                                          icon: FontAwesomeIcons.trophy,
                                           onPressed: () {
                                             // Navigator.push(
                                             //     context,
@@ -227,83 +243,161 @@ class _HeaderState extends State<Header> {
             ],
           ),
         ),
-        //    Positioned(
-        //    top: 150,
-        // width: 1200,
-        // child:
-        Container(
-          margin: EdgeInsets.only(top: 120),
-          height: 650,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(Assets.main),
+        if (widget.page == "HomeHeaderData")
+          HomeHeaderData()
+        else if (widget.page == "TeamHeaderData")
+          TeamHeaderData()
+      ],
+    );
+  }
+}
+
+class TeamHeaderData extends StatefulWidget {
+  @override
+  _TeamHeaderDataState createState() => _TeamHeaderDataState();
+}
+
+class _TeamHeaderDataState extends State<TeamHeaderData> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 330),
+      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+      width: 700,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(100.0),
+        ),
+        color: Colors.white,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            "TEAM",
+            style: TextStyle(
+              fontFamily: "Segoe UI",
+              fontSize: 44,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 8,
             ),
           ),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+          Text(
+            "Talent wins games, but teamwork and intelligence win championships.",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: "Segoe UI",
+              fontSize: 24,
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            padding: EdgeInsets.only(right: 60),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Container(
-                  margin: EdgeInsets.only(top: 90),
-                  child: Image.asset(
-                    Assets.logo_shadow,
-                    scale: 1.5,
+                Text(
+                  "--Michael Jordan",
+                  style: TextStyle(
+                    fontFamily: "Segoe UI",
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
-                Image.asset(
-                  Assets.cc_vit_chapter,
-                  scale: 1.5,
-                ),
-                InkWell(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(50),
-                  ),
-                  onTap: () {
-                    html.window.open(Constants.DISCORD, "discord");
-                  },
-                  onHover: (h) {
-                    setState(() {
-                      _isHover = h;
-                    });
-                  },
-                  onFocusChange: (h) {
-                    setState(() {
-                      _isHover = h;
-                    });
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(top: 110),
-                    width: 260,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(50),
-                      ),
-                      color: Color(0xff4A74F5),
-                    ),
-                    child: Center(
-                      child: !_isHover
-                          ? Text(
-                              "JOIN US TODAY  ",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "Segoe UI",
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            )
-                          : Icon(
-                              FontAwesomeIcons.discord,
-                              color: Colors.white,
-                            ),
-                    ),
-                  ),
-                )
               ],
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class HomeHeaderData extends StatefulWidget {
+  const HomeHeaderData({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  _HomeHeaderDataState createState() => _HomeHeaderDataState();
+}
+
+class _HomeHeaderDataState extends State<HomeHeaderData> {
+  bool _isHover = false;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 120),
+      height: 650,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(Assets.main),
         ),
-      ],
+      ),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 90),
+              child: Image.asset(
+                Assets.logo_shadow,
+                scale: 1.5,
+              ),
+            ),
+            Image.asset(
+              Assets.cc_vit_chapter,
+              scale: 1.5,
+            ),
+            InkWell(
+              borderRadius: BorderRadius.all(
+                Radius.circular(50),
+              ),
+              onTap: () {
+                html.window.open(Constants.DISCORD, "discord");
+              },
+              onHover: (h) {
+                setState(() {
+                  _isHover = h;
+                });
+              },
+              onFocusChange: (h) {
+                setState(() {
+                  _isHover = h;
+                });
+              },
+              child: Container(
+                margin: EdgeInsets.only(top: 110),
+                width: 260,
+                height: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(50),
+                  ),
+                  color: Color(0xff4A74F5),
+                ),
+                child: Center(
+                  child: !_isHover
+                      ? Text(
+                          "JOIN US TODAY",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: "Segoe UI",
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      : Icon(
+                          FontAwesomeIcons.discord,
+                          color: Colors.white,
+                        ),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
@@ -311,19 +405,33 @@ class _HeaderState extends State<Header> {
 class _NavBarItem extends StatelessWidget {
   final String child;
   final Function onPressed;
-  const _NavBarItem({Key key, this.child, this.onPressed}) : super(key: key);
+  final IconData icon;
+  final bool active;
+  const _NavBarItem(
+      {Key key, this.child, @required this.onPressed, this.icon, this.active})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onPressed,
-      child: Text(
-        child,
-        style: GoogleFonts.roboto(
-          color: Colors.white,
-          fontSize: 18,
-        ),
-      ),
+      child: child != null
+          ? Row(
+              children: [
+                Icon(icon),
+                Text(
+                  child,
+                  style: GoogleFonts.roboto(
+                    color: active ? Colors.white : Colors.black,
+                    fontSize: 18,
+                  ),
+                ),
+              ],
+            )
+          : Icon(
+              icon,
+              color: active ? Colors.white : Colors.white70,
+            ),
     );
   }
 }

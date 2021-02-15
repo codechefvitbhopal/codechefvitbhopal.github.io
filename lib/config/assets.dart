@@ -13,6 +13,8 @@ class Assets {
   static const footer = 'assets/images/footer.png';
   static const header = 'assets/images/header.png';
   static const main = 'assets/images/main.png';
+  static const team = 'assets/images/teams.png';
+  static const small_header = 'assets/images/header_small.png';
   static const logo_white = 'assets/logo/whiteLogo.png';
   static const logo_shadow = 'assets/logo/ccwhite_shadow.png';
 }

@@ -1,0 +1,212 @@
+{
+  "team": [
+    {
+      "designation": "President",
+      "name": "V Surya kumar",
+
+      "imageURL": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/surya.jpg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Competitive Programming Lead",
+      "name": "Akshat Goyal",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/akshatgoyal.jpeg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Outreach & Media Lead",
+      "name": "Pratul Maurya",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/pratul.jpg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Events Lead",
+      "name": "Abhishek patnigere",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/abhishek.jpg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Event & PR manager",
+      "name": "Siddhant Singh",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/siddhant.jpeg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Event & PR manager",
+      "name": "Chirag Sharma",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/chirag.jpeg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Logistics & Outreach Manager",
+      "name": "Arpita Das",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/arpita.jpeg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Logistics & Outreach Manager",
+      "name": "Aadira Ramakrishnan",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/aadira.jpeg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Content Writer",
+      "name": "Sumedha Poonia",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/sumedha.png",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Graphic Designer",
+      "name": "Laavart",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/laavart.jpg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Graphic Designer",
+      "name": "ABHAY SINGH RANA",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/abhay.jpg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Technical Analyst",
+      "name": "Shivam Paliya",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/shivam.jpg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Technical Analyst",
+      "name": "Arushi  Jain",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/arushi.jpeg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Editorialist",
+      "name": "Vaishnav Anil",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/vaishnav.png",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Editorialist",
+      "name": "Vishesh",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/vishesh.jpeg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": ""
+      }
+    },
+    {
+      "designation": "Developer",
+      "name": "Ankit Sagar",
+
+      "profile": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/ankit.png",
+      "bio": "Coding Builds, Logical Minds",
+      "social": {
+        "medium": "https://woinbo.medium.com",
+        "linkedin": "https://www.linkedin.com/in/woinbo",
+        "github": "https://www.github.com/woinbo",
+        "twitter": "https://www.twitter.com/woinbo"
+      }
+    }
+  ]
+}

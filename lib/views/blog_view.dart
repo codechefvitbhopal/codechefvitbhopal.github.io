@@ -102,7 +102,7 @@ class _BlogTabState extends State<BlogTab> {
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) =>
                     BlogWidget(_blogs[index], index, _blogs.length)),
-            RaisedButton(
+            ElevatedButton(
               child: Text(
                 'More',
                 style: Theme.of(context)
@@ -110,7 +110,6 @@ class _BlogTabState extends State<BlogTab> {
                     .button
                     .copyWith(color: Colors.white),
               ),
-              elevation: 0.0,
               onPressed: () =>
                   html.window.open(Constants.PROFILE_MEDIUM, 'ankitsagar'),
             )
