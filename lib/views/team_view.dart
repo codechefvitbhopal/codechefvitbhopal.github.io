@@ -93,7 +93,6 @@ class _TeamViewState extends State<TeamView> {
                   ? CenteredView(
                       child: ResponsiveGridRow(
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
                         children: List.generate(
                           team.length,
                           (index) => ResponsiveGridCol(
@@ -105,6 +104,7 @@ class _TeamViewState extends State<TeamView> {
                             child: _TeamIteamBox(
                               name: team[index].name,
                               image: team[index].imageURL,
+                              designation: team[index].designation,
                             ),
                           ),
                         ),
@@ -133,7 +133,9 @@ class _TeamViewState extends State<TeamView> {
 class _TeamIteamBox extends StatelessWidget {
   final String image;
   final String name;
-  const _TeamIteamBox({Key key, this.image, this.name}) : super(key: key);
+  final String designation;
+  const _TeamIteamBox({Key key, this.image, this.name, this.designation})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -167,7 +169,7 @@ class _TeamIteamBox extends StatelessWidget {
             width: double.infinity,
             color: Colors.white,
             padding: const EdgeInsets.only(top: 8),
-            child: Text("$name, Developer"),
+            child: Text("$name, $designation"),
           ),
           Container(
             width: double.infinity,
