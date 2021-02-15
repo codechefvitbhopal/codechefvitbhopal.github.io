@@ -28,12 +28,14 @@ class _TeamViewState extends State<TeamView> {
   }
 
   Future<void> getTeamData(String incomingUrl) async {
+    setState(() {
+      isLoading = true;
+    });
     String url = incomingUrl;
 
     var response = await http.get(url);
     print(response);
     var jsonData = jsonDecode(response.body);
-    print("From Data:  $jsonData");
 
     jsonData['team'].forEach((element) {
       Team teamMember = Team();
@@ -43,6 +45,9 @@ class _TeamViewState extends State<TeamView> {
       teamMember.imageURL = element['imageURL'];
 
       team.add(teamMember);
+    });
+    setState(() {
+      isLoading = false;
     });
   }
 
