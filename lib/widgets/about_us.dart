@@ -23,7 +23,7 @@ class AboutUs extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            top: 65,
+            top: 60,
             left: 80,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -37,12 +37,12 @@ class AboutUs extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 Container(
                   width: 460,
                   child: AutoSizeText(
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                    "CodeChef VIT Bhopal Chapter is a programming club run and maintained by the official chapter leaders and mentored by CodeChef. The chapter drives to make learning competitive programming accessible to students",
                     textAlign: TextAlign.left,
                     maxFontSize: 22,
                     minFontSize: 12,
@@ -54,25 +54,25 @@ class AboutUs extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 20,
                 ),
                 Text(
-                  "About Our Goals",
+                  "Our Vision",
                   style: TextStyle(
                     fontSize: 36,
                     fontFamily: "Segoe UI",
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 Container(
-                  width: 460,
+                  width: 500,
                   child: AutoSizeText(
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                    "CodeChef VIT Bhopal Chapter believes in providing everyone with a community of dedicated programmers to build a robust Competitive Programming culture on our campus. The chapter aims to make the college's coding culture the very best culture. The community emphasis to smooth your coding skills, data structures and algorithmic knowledge.",
                     textAlign: TextAlign.left,
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 21,
                       fontFamily: "Segoe UI",
                       fontWeight: FontWeight.w100,
                     ),

@@ -24,45 +24,44 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MediaQuery.of(context).size.width > 300
-          ? SingleChildScrollView(
-              child: Container(
-                child: Column(
-                  children: [
-                    Header(
-                      page: "HomeHeaderData",
-                      active: "home",
-                    ),
-                    // SizedBox(
-                    //   height: 80,
-                    // ),
-                    AboutUs(),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      child: Image.asset(
-                        Assets.events,
-                        scale: 2,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Events(cardList: cardList),
-                    Footer(),
-                  ],
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [
+              Header(
+                page: "HomeHeaderData",
+                active: "home",
+              ),
+              // SizedBox(
+              //   height: 80,
+              // ),
+              AboutUs(),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                child: Image.asset(
+                  Assets.events,
+                  scale: 2,
                 ),
               ),
-            )
-          : Container(
-              child: Center(
-                child: Text(
-                  "Opps!!!\nThis website is not available on mobile please switch to desktop.",
-                  textAlign: TextAlign.center,
-                ),
+              SizedBox(
+                height: 10,
               ),
-            ),
+              Events(cardList: cardList),
+              Footer(),
+            ],
+          ),
+        ),
+      ),
+      // : Container(
+      //     child: Center(
+      //       child: Text(
+      //         "Opps!!!\nThis website is not available on mobile please switch to desktop.",
+      //         textAlign: TextAlign.center,
+      //       ),
+      //     ),
+      //   ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           ThemeSwitcher.of(context).switchDarkMode();

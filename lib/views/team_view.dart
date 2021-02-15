@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:html';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ccvit/config/assets.dart';
@@ -34,7 +35,6 @@ class _TeamViewState extends State<TeamView> {
     String url = incomingUrl;
 
     var response = await http.get(url);
-    print(response);
     var jsonData = jsonDecode(response.body);
 
     jsonData['team'].forEach((element) {
@@ -134,7 +134,21 @@ class _TeamIteamBox extends StatelessWidget {
   final String image;
   final String name;
   final String designation;
-  const _TeamIteamBox({Key key, this.image, this.name, this.designation})
+  final String bio;
+  final String linkedin;
+  final String github;
+  final String medium;
+  final String twitter;
+  const _TeamIteamBox(
+      {Key key,
+      this.image,
+      this.name,
+      this.designation,
+      this.bio,
+      this.github,
+      this.linkedin,
+      this.medium,
+      this.twitter})
       : super(key: key);
 
   @override
@@ -143,6 +157,7 @@ class _TeamIteamBox extends StatelessWidget {
         // Stack(
         //   children: [
         Container(
+      margin: EdgeInsets.all(8.0),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -157,25 +172,58 @@ class _TeamIteamBox extends StatelessWidget {
         ),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            margin: EdgeInsets.all(20.0),
+          ClipRRect(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20.0),
+                topLeft: Radius.circular(20.0)),
             child: Image.network(
               image,
-              fit: BoxFit.cover,
+              loadingBuilder: (BuildContext context, Widget child,
+                  ImageChunkEvent loadingProgress) {
+                if (loadingProgress == null) return child;
+                return Center(
+                  child: CircularProgressIndicator(
+                    value: loadingProgress.expectedTotalBytes != null
+                        ? loadingProgress.cumulativeBytesLoaded /
+                            loadingProgress.expectedTotalBytes
+                        : null,
+                  ),
+                );
+              },
+              errorBuilder: (context, error, stackTrace) => Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Center(
+                  child: Text('😢'),
+                ),
+              ),
+              fit: BoxFit.fill,
             ),
           ),
           Container(
             width: double.infinity,
             color: Colors.white,
+            alignment: Alignment.center,
             padding: const EdgeInsets.only(top: 8),
-            child: Text("$name, $designation"),
+            child: AutoSizeText(
+              "$name, \n$designation",
+              minFontSize: 8,
+              textAlign: TextAlign.center,
+            ),
           ),
           Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(20.0),
+                bottomLeft: Radius.circular(20.0),
+              ),
+            ),
+            alignment: Alignment.center,
             width: double.infinity,
-            color: Colors.white,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-            child: AutoSizeText("\"Coding Builds, Logical Minds\""),
+            child: bio == null || bio == "" ? Text("") : AutoSizeText(bio),
           ),
         ],
       ),
