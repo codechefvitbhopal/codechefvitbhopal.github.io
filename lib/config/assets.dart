@@ -17,4 +17,12 @@ class Assets {
   static const small_header = 'assets/images/header_small.png';
   static const logo_white = 'assets/logo/whiteLogo.png';
   static const logo_shadow = 'assets/logo/ccwhite_shadow.png';
+
+  // dark
+  static const logo_shadow_dark = "assets/logo/ccwhite_shadow_dark.png";
+  static const small_header_dark = "assets/images/header_small_dark.png";
+  static const header_dark = "assets/images/header_dark.png";
+  static const footer_dark = "assets/images/footer_Dark.png";
+  static const main_dark = 'assets/images/main_dark.png';
+  static const cc_vit_chapter_dark = 'assets/images/cc_vit_chapter_dark.png';
 }

@@ -29,6 +29,9 @@ class HomeView extends StatelessWidget {
           child: Column(
             children: [
               Header(
+                headerImage: ThemeSwitcher.of(context).isDarkModeOn
+                    ? Assets.header_dark
+                    : Assets.header,
                 page: "HomeHeaderData",
                 active: "home",
               ),

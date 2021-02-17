@@ -1,9 +1,11 @@
 import 'dart:convert';
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ccvit/config/assets.dart';
 import 'package:ccvit/models/event_model.dart';
 import 'package:ccvit/widgets/centeredView/centered_view.dart';
 import 'package:ccvit/widgets/header.dart';
+import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -42,13 +44,12 @@ class _EventViewState extends State<EventView> {
                 Event eventData = Event();
                 eventData.image = element['image'];
                 eventData.name = element['name'];
-                eventData.des = element['des'];
                 // eventData.registrationLink = element['registrationLink'];
                 // eventData.github = element['github'];
                 // eventData.linkedin = element['linkedin'];
                 // eventData.instagram = element['instagram'];
                 // eventData.twitter = element['twitter'];
-                // eventData.medium = element['medium'];
+                eventData.medium = element['medium'];
                 eventData.dateOfEvent = element['dateOfEvent'];
                 // eventData.venue = element['venue'];
                 // eventData.tag = element['tag'];
@@ -70,6 +71,9 @@ class _EventViewState extends State<EventView> {
           child: Column(
             children: [
               Header(
+                headerImage: ThemeSwitcher.of(context).isDarkModeOn
+                    ? Assets.small_header_dark
+                    : Assets.small_header,
                 page: "EventHeaderData",
                 active: "event",
               ),
@@ -94,7 +98,7 @@ class _EventViewState extends State<EventView> {
                                   linkedin: event[index].linkedin,
                                   twitter: event[index].twitter,
                                   instagram: event[index].instagram,
-                                  des: event[index].des,
+                                  medium: event[index].medium,
                                   dateOfEvent: event[index].dateOfEvent,
                                   registrationLink:
                                       event[index].registrationLink,
@@ -112,6 +116,14 @@ class _EventViewState extends State<EventView> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: Icon(
+          Icons.arrow_back,
+        ),
+      ),
     );
   }
 }
@@ -119,7 +131,6 @@ class _EventViewState extends State<EventView> {
 class EventCard extends StatelessWidget {
   final String image;
   final String name;
-  final String des;
   final String linkedin;
   final String github;
   final String medium;
@@ -132,7 +143,6 @@ class EventCard extends StatelessWidget {
       {Key key,
       this.image,
       this.name,
-      this.des,
       this.github,
       this.linkedin,
       this.medium,
@@ -148,17 +158,22 @@ class EventCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(20.0),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(
-            Radius.circular(20.0),
+        borderRadius: BorderRadius.all(
+          Radius.circular(20.0),
+        ),
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 8,
+            color: ThemeSwitcher.of(context).isDarkModeOn
+                ? Color(0xff494949)
+                : Colors.grey.shade400,
+            offset: Offset(0, 2),
           ),
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 8,
-              color: Colors.grey.shade400,
-              offset: Offset(0, 2),
-            ),
-          ],
-          color: Colors.white),
+        ],
+        color: ThemeSwitcher.of(context).isDarkModeOn
+            ? Color(0xff414141)
+            : Colors.white,
+      ),
       child: ClipRRect(
         borderRadius: BorderRadius.all(
           Radius.circular(20.0),
@@ -188,12 +203,15 @@ class EventCard extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             Container(
-              color: Colors.white,
+              color: ThemeSwitcher.of(context).isDarkModeOn
+                  ? Color(0xff414141)
+                  : Colors.white,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   IconButton(
-                      onPressed: () => html.window.open("", "name"),
+                      onPressed: () =>
+                          html.window.open("https://google.com", "name"),
                       icon: Icon(FontAwesomeIcons.linkedin)),
                   IconButton(
                     icon: Icon(FontAwesomeIcons.twitter),
@@ -216,24 +234,27 @@ class EventCard extends StatelessWidget {
                 bottom: 6,
               ),
               width: MediaQuery.of(context).size.width,
-              color: Colors.white,
+              color: ThemeSwitcher.of(context).isDarkModeOn
+                  ? Color(0xff414141)
+                  : Colors.white,
               alignment: Alignment.center,
               child: Text(name),
             ),
-            des == null || des == ""
-                ? Container()
-                : Container(
-                    padding: const EdgeInsets.only(
-                      bottom: 12.0,
-                    ),
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                    alignment: Alignment.center,
-                    child: Text(
-                      dateOfEvent,
-                    ),
-                  ),
-            GestureDetector(
+            Container(
+              padding: const EdgeInsets.only(
+                bottom: 12.0,
+              ),
+              width: MediaQuery.of(context).size.width,
+              color: ThemeSwitcher.of(context).isDarkModeOn
+                  ? Color(0xff414141)
+                  : Colors.white,
+              alignment: Alignment.center,
+              child: Text(
+                dateOfEvent,
+              ),
+            ),
+            TextButton(
+              onPressed: () => html.window.open(medium, "medium"),
               child: Container(
                 padding: const EdgeInsets.only(bottom: 6.0, top: 6.0),
                 width: MediaQuery.of(context).size.width,
@@ -241,6 +262,9 @@ class EventCard extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(
                   "Read more",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
             )

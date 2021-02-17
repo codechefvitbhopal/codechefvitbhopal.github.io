@@ -7,6 +7,7 @@ import 'package:ccvit/models/team_model.dart';
 import 'package:ccvit/widgets/centeredView/centered_view.dart';
 import 'package:ccvit/widgets/footer.dart';
 import 'package:ccvit/widgets/header.dart';
+import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -45,11 +46,11 @@ class _TeamViewState extends State<TeamView> {
       teamMember.name = element['name'];
       teamMember.designation = element['designation'];
       teamMember.bio = element['bio'];
-      teamMember.github = element['github'];
-      teamMember.linkedin = element['linkedin'];
-      teamMember.instagram = element['instagram'];
-      teamMember.twitter = element['twitter'];
-      teamMember.medium = element['medium'];
+      teamMember.github = element['social']['github'];
+      teamMember.linkedin = element['social']['linkedin'];
+      teamMember.instagram = element['social']['instagram'];
+      teamMember.twitter = element['social']['twitter'];
+      teamMember.medium = element['social']['medium'];
 
       team.add(teamMember);
     });
@@ -89,6 +90,9 @@ class _TeamViewState extends State<TeamView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Header(
+                headerImage: ThemeSwitcher.of(context).isDarkModeOn
+                    ? Assets.small_header_dark
+                    : Assets.small_header,
                 page: "TeamHeaderData",
                 active: "team",
               ),
@@ -170,11 +174,15 @@ class TeamMemberCard extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             blurRadius: 8,
-            color: Colors.grey.shade400,
+            color: ThemeSwitcher.of(context).isDarkModeOn
+                ? Color(0xff494949)
+                : Colors.grey.shade400,
             offset: Offset(0, 2),
           ),
         ],
-        color: Colors.white,
+        color: ThemeSwitcher.of(context).isDarkModeOn
+            ? Color(0xff414141)
+            : Colors.white,
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.all(
@@ -206,29 +214,39 @@ class TeamMemberCard extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.only(top: 10),
-              color: Colors.white,
+              color: ThemeSwitcher.of(context).isDarkModeOn
+                  ? Color(0xff414141)
+                  : Colors.white,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   IconButton(
-                      onPressed: () => html.window.open(
-                          "https://www.linkedin.com/im/" + linkedin,
-                          "linkedin"),
+                      onPressed: () {
+                        html.window.open(
+                            "https://www.linkedin.com/in/" + linkedin,
+                            "linkedin");
+                      },
                       icon: Icon(FontAwesomeIcons.linkedin)),
                   IconButton(
                     icon: Icon(FontAwesomeIcons.twitter),
-                    onPressed: () => html.window
-                        .open("https://www.twitter.com/" + twitter, "name"),
+                    onPressed: () {
+                      html.window.open(
+                          "https://www.twitter.com/" + twitter, "twitter");
+                    },
                   ),
                   IconButton(
                     icon: Icon(FontAwesomeIcons.instagram),
-                    onPressed: () => html.window.open(
-                        "https://www.instagram.com/" + instagram, "instagram"),
+                    onPressed: () {
+                      html.window.open("https://www.instagram.com/" + instagram,
+                          "instagram");
+                    },
                   ),
                   IconButton(
                     icon: Icon(FontAwesomeIcons.github),
-                    onPressed: () => html.window
-                        .open("https://www.github.com/" + github, "github"),
+                    onPressed: () {
+                      html.window
+                          .open("https://www.github.com/" + github, "github");
+                    },
                   ),
                 ],
               ),
@@ -237,16 +255,23 @@ class TeamMemberCard extends StatelessWidget {
               padding: EdgeInsets.only(
                   top: 12.0, bottom: bio == null || bio == "" ? 12 : 0),
               width: MediaQuery.of(context).size.width,
-              color: Colors.white,
+              color: ThemeSwitcher.of(context).isDarkModeOn
+                  ? Color(0xff414141)
+                  : Colors.white,
               alignment: Alignment.center,
-              child: Text("$name\n$designation"),
+              child: Text(
+                "$name\n$designation",
+                textAlign: TextAlign.center,
+              ),
             ),
             bio == null || bio == ""
                 ? Container()
                 : Container(
                     padding: const EdgeInsets.only(bottom: 12.0),
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
+                    color: ThemeSwitcher.of(context).isDarkModeOn
+                        ? Color(0xff414141)
+                        : Colors.white,
                     alignment: Alignment.center,
                     child: AutoSizeText(bio),
                   )

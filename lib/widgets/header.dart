@@ -4,7 +4,9 @@ import 'package:ccvit/config/constants.dart';
 import 'package:ccvit/views/blog_view.dart';
 import 'package:ccvit/views/events_view.dart';
 import 'package:ccvit/views/home_view.dart';
+import 'package:ccvit/views/leaderBoard.dart';
 import 'package:ccvit/views/team_view.dart';
+import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,7 +19,9 @@ import 'dart:html' as html;
 class Header extends StatefulWidget {
   final String page;
   final String active;
-  const Header({Key key, this.page, this.active}) : super(key: key);
+  final String headerImage;
+  const Header({Key key, this.page, this.active, @required this.headerImage})
+      : super(key: key);
 
   @override
   _HeaderState createState() => _HeaderState();
@@ -32,7 +36,7 @@ class _HeaderState extends State<Header> {
         Container(
           width: MediaQuery.of(context).size.width,
           child: Image.asset(
-            widget.page == "home" ? Assets.header : Assets.small_header,
+            widget.headerImage,
             // color: Colors.black,
           ),
         ),
@@ -120,11 +124,11 @@ class _HeaderState extends State<Header> {
 
                           active: widget.active == "trophy",
                           onPressed: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //       builder: (context) => BlogTab(),
-                            //     ));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LeaderBoard(),
+                                ));
                           },
                         ),
                       ],
@@ -158,11 +162,12 @@ class _HeaderState extends State<Header> {
                                           child: "HOME",
                                           icon: FontAwesomeIcons.home,
                                           onPressed: () {
-                                            // Navigator.push(
-                                            //     context,
-                                            //     MaterialPageRoute(
-                                            //       builder: (context) => BlogTab(),
-                                            //     ));
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      HomeView(),
+                                                ));
                                           },
                                         ),
                                       ),
@@ -225,11 +230,12 @@ class _HeaderState extends State<Header> {
                                           child: "LEADERBOARD",
                                           icon: FontAwesomeIcons.trophy,
                                           onPressed: () {
-                                            // Navigator.push(
-                                            //     context,
-                                            //     MaterialPageRoute(
-                                            //       builder: (context) => BlogTab(),
-                                            //     ));
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      LeaderBoard(),
+                                                ));
                                           },
                                         ),
                                       ),
@@ -342,7 +348,11 @@ class _HomeHeaderDataState extends State<HomeHeaderData> {
       height: 650,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(Assets.main),
+          image: AssetImage(
+            ThemeSwitcher.of(context).isDarkModeOn
+                ? Assets.main_dark
+                : Assets.main,
+          ),
         ),
       ),
       child: Center(
@@ -352,12 +362,16 @@ class _HomeHeaderDataState extends State<HomeHeaderData> {
             Container(
               margin: EdgeInsets.only(top: 90),
               child: Image.asset(
-                Assets.logo_shadow,
+                ThemeSwitcher.of(context).isDarkModeOn
+                    ? Assets.logo_shadow_dark
+                    : Assets.logo_shadow,
                 scale: 1.5,
               ),
             ),
             Image.asset(
-              Assets.cc_vit_chapter,
+              ThemeSwitcher.of(context).isDarkModeOn
+                  ? Assets.cc_vit_chapter_dark
+                  : Assets.cc_vit_chapter,
               scale: 1.5,
             ),
             InkWell(
@@ -385,7 +399,9 @@ class _HomeHeaderDataState extends State<HomeHeaderData> {
                   borderRadius: BorderRadius.all(
                     Radius.circular(50),
                   ),
-                  color: Color(0xff4A74F5),
+                  color: ThemeSwitcher.of(context).isDarkModeOn
+                      ? Color(0xff494949)
+                      : Color(0xff4A74F5),
                 ),
                 child: Center(
                   child: !_isHover

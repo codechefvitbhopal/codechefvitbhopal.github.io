@@ -5,14 +5,14 @@ darkTheme(context) {
     fontFamily: 'GoogleSansRegular',
     primarySwatch: Colors.blue,
     primaryColor: Colors.black,
-    accentColor: Colors.blue,
+    accentColor: Color(0xff7C7C7C),
     disabledColor: Colors.grey,
     cardColor: Color(0xff1f2124),
     canvasColor: Colors.black,
     brightness: Brightness.dark,
     buttonTheme: Theme.of(context).buttonTheme.copyWith(
         colorScheme: ColorScheme.dark(),
-        buttonColor: Colors.blue,
+        buttonColor: Color(0xff7C7C7C),
         splashColor: Colors.black),
     appBarTheme: AppBarTheme(
       elevation: 0.0,

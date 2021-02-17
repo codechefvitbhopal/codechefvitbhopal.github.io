@@ -1,5 +1,6 @@
 import 'package:ccvit/config/assets.dart';
 import 'package:ccvit/config/constants.dart';
+import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:html' as html;
@@ -15,7 +16,9 @@ class Footer extends StatelessWidget {
       child: Stack(
         children: [
           Image.asset(
-            Assets.footer,
+            ThemeSwitcher.of(context).isDarkModeOn
+                ? Assets.footer_dark
+                : Assets.footer,
             width: double.infinity,
           ),
           Positioned(
