@@ -1,6 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ccvit/config/assets.dart';
 import 'package:ccvit/config/constants.dart';
 import 'package:ccvit/views/blog_view.dart';
+import 'package:ccvit/views/events_view.dart';
 import 'package:ccvit/views/home_view.dart';
 import 'package:ccvit/views/team_view.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +37,7 @@ class _HeaderState extends State<Header> {
           ),
         ),
         CenteredView(
+          horizontal: 70,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -85,11 +88,11 @@ class _HeaderState extends State<Header> {
 
                           active: widget.active == "event",
                           onPressed: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //       builder: (context) => BlogTab(),
-                            //     ));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => EventView(),
+                                ));
                           },
                         ),
                         SizedBox(
@@ -188,11 +191,12 @@ class _HeaderState extends State<Header> {
                                           child: "EVENTS",
                                           icon: FontAwesomeIcons.calendarCheck,
                                           onPressed: () {
-                                            // Navigator.push(
-                                            //     context,
-                                            //     MaterialPageRoute(
-                                            //       builder: (context) => BlogTab(),
-                                            //     ));
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      EventView(),
+                                                ));
                                           },
                                         ),
                                       ),
@@ -261,47 +265,53 @@ class _TeamHeaderDataState extends State<TeamHeaderData> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 330),
+      margin: EdgeInsets.only(top: 120),
       padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
       width: 700,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
           Radius.circular(100.0),
         ),
-        color: Colors.white,
+        color: Colors.white12,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
+          AutoSizeText(
             "TEAM",
             style: TextStyle(
               fontFamily: "Segoe UI",
-              fontSize: 44,
+              fontSize: 36,
+              color: Colors.white,
               fontWeight: FontWeight.bold,
               letterSpacing: 8,
             ),
           ),
-          Text(
+          AutoSizeText(
             "Talent wins games, but teamwork and intelligence win championships.",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: "Segoe UI",
-              fontSize: 24,
-              fontWeight: FontWeight.w300,
+              fontSize: 20,
+              color: Colors.white,
+              fontWeight: FontWeight.normal,
             ),
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.only(right: 60),
+            padding: EdgeInsets.only(
+              right: 20,
+              top: 10,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
+                AutoSizeText(
                   "--Michael Jordan",
                   style: TextStyle(
                     fontFamily: "Segoe UI",
                     fontSize: 12,
+                    color: Colors.white,
                     fontWeight: FontWeight.w400,
                   ),
                 ),

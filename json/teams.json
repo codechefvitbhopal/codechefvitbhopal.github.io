@@ -1,6 +1,20 @@
 {
   "team": [
     {
+      "designation": "Faculty Advisor",
+      "name": "Dr Rahul Kottath",
+
+      "imageURL": "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/profile/rahul.jpg",
+      "bio": "Loaded with knowledge, armed with wit and equipped with an unending thirst for learning, he is our mentor cum friend. Always available to take up all doubts and problems ranging from hilariously idiotic to considerably complex, we are honoured to have Dr Rahul Kottath as our faculty advisor.",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": "",
+        "instagram":""
+      }
+    },
+    {
       "designation": "President",
       "name": "V Surya kumar",
 
@@ -10,7 +24,8 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "v_surya_kumar",
+        "instagram":"surya.rar"
       }
     },
     {
@@ -23,7 +38,8 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "",
+        "instagram":"_akshatgoyal__"
       }
     },
     {
@@ -36,7 +52,7 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "PratulMaurya"
       }
     },
     {
@@ -62,7 +78,8 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "",
+        "instagram":"siddhant3646"
       }
     },
     {
@@ -75,7 +92,8 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "",
+        "instagram":"chirag_sharma365"
       }
     },
     {
@@ -88,7 +106,8 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "",
+        "instagram":"arpitaaa01"
       }
     },
     {
@@ -101,7 +120,8 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "",
+        "instagram":"aadiramakrishnan"
       }
     },
     {
@@ -114,7 +134,7 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "sumedha_poonia"
       }
     },
     {
@@ -127,7 +147,8 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "",
+        "instagram":"jaadu_s_ra_s_al_ghul"
       }
     },
     {
@@ -140,7 +161,8 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "",
+        "instagram":"iiabhayii"
       }
     },
     {
@@ -153,7 +175,8 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "",
+        "instagram":"shivam_paliya64"
       }
     },
     {
@@ -166,7 +189,8 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "",
+        "instagram":"a_r_us_h_i"
       }
     },
     {
@@ -179,7 +203,8 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "",
+        "instagram":"vsh_nv"
       }
     },
     {
@@ -192,7 +217,8 @@
         "medium": "",
         "linkedin": "",
         "github": "",
-        "twitter": ""
+        "twitter": "",
+        "instagram":"vishesh_t27"
       }
     },
     {
@@ -203,9 +229,10 @@
       "bio": "Coding Builds, Logical Minds",
       "social": {
         "medium": "https://woinbo.medium.com",
-        "linkedin": "https://www.linkedin.com/in/woinbo",
-        "github": "https://www.github.com/woinbo",
-        "twitter": "https://www.twitter.com/woinbo"
+        "linkedin": "woinbo",
+        "github": "woinbo",
+        "twitter": "woinbo",
+        "instagram":"woinbo"
       }
     }
   ]

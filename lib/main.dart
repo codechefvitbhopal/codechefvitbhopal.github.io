@@ -31,7 +31,7 @@ class _CodeChefVitBhopalAppState extends State<CodeChefVitBhopalApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Ankit sagar',
+      title: 'CODE CHEF VIT BHOPAL',
       theme: ThemeSwitcher.of(context).isDarkModeOn
           ? darkTheme(context)
           : lightTheme(context),
