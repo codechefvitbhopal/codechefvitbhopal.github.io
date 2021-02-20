@@ -1,4 +1,6 @@
 import 'package:ccvit/views/home_view.dart';
+import 'package:ccvit/views/home_view_small.dart';
+import 'package:ccvit/widgets/responsive_widget.dart';
 import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +37,10 @@ class _CodeChefVitBhopalAppState extends State<CodeChefVitBhopalApp> {
       theme: ThemeSwitcher.of(context).isDarkModeOn
           ? darkTheme(context)
           : lightTheme(context),
-      home: HomeView(),
+      home: ResponsiveWidget(
+        largeScreen: HomeView(),
+        smallScreen: HomeViewSmall(),
+      ),
     );
   }
 }

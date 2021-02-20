@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_grid/responsive_grid.dart';
-
+import 'responsive_widget.dart';
 import 'centeredView/centered_view.dart';
 
 import 'dart:html' as html;
@@ -34,21 +34,21 @@ class _HeaderState extends State<Header> {
       alignment: Alignment.topCenter,
       children: [
         Container(
-          width: MediaQuery.of(context).size.width,
           child: Image.asset(
             widget.headerImage,
+
             // color: Colors.black,
           ),
         ),
         CenteredView(
-          horizontal: 70,
+          vertical: MediaQuery.of(context).size.width < 321 ? 10 : 60,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 child: Image.asset(
                   Assets.logo_white,
-                  scale: 1.5,
+                  scale: MediaQuery.of(context).size.width < 321 ? 4 : 1.5,
                 ),
               ),
               MediaQuery.of(context).size.width > 900
@@ -247,7 +247,7 @@ class _HeaderState extends State<Header> {
                       },
                       icon: Icon(
                         FontAwesomeIcons.bars,
-                        size: 32,
+                        size: 16, //TODO: have to chnage
                         color: Colors.white,
                       )),
             ],
@@ -344,8 +344,9 @@ class _HomeHeaderDataState extends State<HomeHeaderData> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 120),
-      height: 650,
+      margin: EdgeInsets.only(
+          top: MediaQuery.of(context).size.width < 321 ? 10 : 120),
+      height: MediaQuery.of(context).size.width < 321 ? 240 : 650,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
@@ -360,19 +361,23 @@ class _HomeHeaderDataState extends State<HomeHeaderData> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 90),
+              margin: EdgeInsets.only(top: 70),
               child: Image.asset(
                 ThemeSwitcher.of(context).isDarkModeOn
                     ? Assets.logo_shadow_dark
                     : Assets.logo_shadow,
-                scale: 1.5,
+                scale: MediaQuery.of(context).size.width < 321
+                    ? 1 / MediaQuery.of(context).size.width * 1000
+                    : 1.5,
               ),
             ),
             Image.asset(
               ThemeSwitcher.of(context).isDarkModeOn
                   ? Assets.cc_vit_chapter_dark
                   : Assets.cc_vit_chapter,
-              scale: 1.5,
+              scale: MediaQuery.of(context).size.width < 321
+                  ? 1 / MediaQuery.of(context).size.width * 1200
+                  : 1.5,
             ),
             InkWell(
               borderRadius: BorderRadius.all(
@@ -392,9 +397,10 @@ class _HomeHeaderDataState extends State<HomeHeaderData> {
                 });
               },
               child: Container(
-                margin: EdgeInsets.only(top: 110),
-                width: 260,
-                height: 80,
+                margin: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.width < 321 ? 10 : 120),
+                width: MediaQuery.of(context).size.width < 321 ? 60 : 260,
+                height: MediaQuery.of(context).size.width < 321 ? 20 : 80,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(
                     Radius.circular(50),
@@ -410,7 +416,9 @@ class _HomeHeaderDataState extends State<HomeHeaderData> {
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: "Segoe UI",
-                            fontSize: 20,
+                            fontSize: MediaQuery.of(context).size.width < 321
+                                ? 4
+                                : 20,
                             fontWeight: FontWeight.bold,
                           ),
                         )

@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ccvit/config/assets.dart';
+import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:flutter/material.dart';
 
 class AboutUs extends StatelessWidget {
@@ -14,9 +15,9 @@ class AboutUs extends StatelessWidget {
       width: 1080,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(
-            Assets.about_us,
-          ),
+          image: ThemeSwitcher.of(context).isDarkModeOn
+              ? AssetImage(Assets.about_us_dark)
+              : AssetImage(Assets.about_us),
           fit: BoxFit.contain,
         ),
       ),
