@@ -127,7 +127,7 @@ class _HeaderState extends State<Header> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => LeaderBoard(),
+                                  builder: (context) => LeaderBoardView(),
                                 ));
                           },
                         ),
@@ -234,7 +234,7 @@ class _HeaderState extends State<Header> {
                                                 context,
                                                 MaterialPageRoute(
                                                   builder: (context) =>
-                                                      LeaderBoard(),
+                                                      LeaderBoardView(),
                                                 ));
                                           },
                                         ),

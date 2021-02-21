@@ -4,6 +4,7 @@ import 'package:ccvit/config/constants.dart';
 import 'package:ccvit/models/blog_model.dart';
 import 'package:ccvit/providers/api_provider.dart';
 import 'package:ccvit/widgets/blog_widget.dart';
+import 'package:ccvit/widgets/centeredView/centered_view.dart';
 import 'package:ccvit/widgets/responsive_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -57,25 +58,40 @@ class _BlogTabState extends State<BlogTab> {
       ));
     }
     return Scaffold(
-      body: SingleChildScrollView(
-        child: ResponsiveWidget(
-          largeScreen: Row(
-            children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: Container(),
+      body: CenteredView(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(bottom: 20),
+                child: Text(
+                  "Articles",
+                  style: TextStyle(
+                    fontSize: 36.0,
+                  ),
+                ),
               ),
-              Expanded(
-                flex: 2,
-                child: blogList(),
+              ResponsiveWidget(
+                largeScreen: Row(
+                  children: <Widget>[
+                    Expanded(
+                      flex: 1,
+                      child: Container(),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: blogList(),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Container(),
+                    )
+                  ],
+                ),
+                smallScreen: blogList(),
               ),
-              Expanded(
-                flex: 1,
-                child: Container(),
-              )
             ],
           ),
-          smallScreen: blogList(),
         ),
       ),
       floatingActionButton: FloatingActionButton(

@@ -1,9 +1,107 @@
+import 'package:ccvit/models/leaderBoard.dart';
 import 'package:ccvit/widgets/centeredView/centered_view.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class LeaderBoard extends StatelessWidget {
+import '../models/sheetModel.dart';
+import '../controller/sheetController.dart';
+
+class LeaderBoardView extends StatefulWidget {
+  @override
+  _LeaderBoardViewState createState() => _LeaderBoardViewState();
+}
+
+class _LeaderBoardViewState extends State<LeaderBoardView> {
+  bool _loadingData = true;
+  List<LeaderBoard> leaderboarditem = <LeaderBoard>[];
+  List<LeaderBoardModel> leaderBoardItems = <LeaderBoardModel>[];
+
+  bool isLoading = true;
+  bool _showError = true;
+
+  @override
+  void initState() {
+    super.initState();
+    getLeaderBoardData();
+  }
+
+  void getLeaderBoardData() {
+    try {
+      SheetController().getFeedbackList().then((leaderBoardItems) {
+        setState(() {
+          this.leaderBoardItems = leaderBoardItems.reversed.toList();
+
+          _showError = false;
+          _loadingData = false;
+        });
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  // Future<void> getTeamData() async {
+  //   setState(() {
+  //     isLoading = true;
+  //   });
+
+  //   FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+  //   await firestore
+  //       .collection('leaderboard')
+  //       .get()
+  //       .then((QuerySnapshot querySnapshot) => {
+  //             querySnapshot.docs.forEach((element) async {
+  //               LeaderBoard leaderBoardData = LeaderBoard();
+  //               leaderBoardData.name = element['name'];
+  //               leaderBoardData.event = element['event'];
+  //               leaderBoardData.marks = element['scoredMarks'];
+  //               leaderBoardData.rank = element['rank'];
+  //               // eventData.instagram = element['instagram'];
+  //               // eventData.twitter = element['twitter'];
+  //               // eventData.venue = element['venue'];
+  //               // eventData.tag = element['tag'];
+
+  //               leaderboarditem.add(leaderBoardData);
+  //             })
+  //           });
+  //   print(leaderboarditem.length.toString());
+  //   setState(() {
+  //     isLoading = false;
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
+    if (_loadingData)
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    if (_showError) {
+      return Center(
+          child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Something went wrong \nPlease refresh the page',
+              style: Theme.of(context).textTheme.headline5,
+            ),
+          ),
+          ElevatedButton(
+            child: Text(
+              'Retry',
+              style: Theme.of(context)
+                  .textTheme
+                  .button
+                  .copyWith(color: Colors.white),
+            ),
+            onPressed: getLeaderBoardData,
+          )
+        ],
+      ));
+    }
     return Scaffold(
       body: SingleChildScrollView(
         child: CenteredView(
@@ -12,7 +110,7 @@ class LeaderBoard extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 20.0),
+                  margin: EdgeInsets.only(bottom: 20),
                   child: Text(
                     "LeaderBoard",
                     style: TextStyle(
@@ -21,39 +119,73 @@ class LeaderBoard extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20.0),
-                    ),
-                    color: Colors.white,
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(
-                          20.0,
-                        ),
+                  height: 500,
+                  child: ListView.builder(
+                    itemCount: leaderBoardItems.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        margin: EdgeInsets.all(8.0),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20.0),
-                            bottomLeft: Radius.circular(20.0),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20.0),
                           ),
-                          color: Colors.blue,
+                          color: Colors.white,
                         ),
-                        child: Center(
-                          child: Text(
-                            "1",
-                            style: TextStyle(
-                              color: Colors.white,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              // margin: EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(
+                                20.0,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(20.0),
+                                  bottomLeft: Radius.circular(20.0),
+                                ),
+                                color: Colors.blue,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  leaderBoardItems[index].rank,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: Text(leaderBoardItems[index].name),
+                            ),
+                            leaderBoardItems[index].score.isNotEmpty
+                                ? Container(
+                                    // margin: EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(
+                                      20.0,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(20.0),
+                                        bottomRight: Radius.circular(20.0),
+                                      ),
+                                      color: Colors.blue,
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        leaderBoardItems[index].score,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                : Container(),
+                          ],
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text("Ankit Sagar"),
-                      ),
-                    ],
+                      );
+                    },
                   ),
                 ),
               ],
