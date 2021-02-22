@@ -13,7 +13,7 @@ class Events extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 450,
-      width: 600,
+      width: 450,
       child: Swiper(
         itemBuilder: (BuildContext context, int index) {
           return Container(
@@ -24,9 +24,9 @@ class Events extends StatelessWidget {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    blurRadius: 16,
-                    color: Colors.grey.shade300,
-                    offset: Offset(0, 6),
+                    blurRadius: 8,
+                    color: Colors.grey.shade500,
+                    offset: Offset(0, 0),
                   )
                 ]),
             child: Image.network(

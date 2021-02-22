@@ -69,7 +69,18 @@ class Footer extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      margin: const EdgeInsets.all(8.0),
+                      margin: const EdgeInsets.only(top: 8.0, bottom: 2.0),
+                      child: Text(
+                        "contact us at codechef@vitbhopal.ac.in",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Segoe UI",
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 2.0, bottom: 8.0),
                       child: Text(
                         "Developed and designed by WOINBO with ❤️",
                         style: TextStyle(

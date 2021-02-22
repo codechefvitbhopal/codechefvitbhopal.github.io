@@ -1,5 +1,6 @@
 import 'package:ccvit/models/leaderBoard.dart';
 import 'package:ccvit/widgets/centeredView/centered_view.dart';
+import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,6 @@ class _LeaderBoardViewState extends State<LeaderBoardView> {
   List<LeaderBoard> leaderboarditem = <LeaderBoard>[];
   List<LeaderBoardModel> leaderBoardItems = <LeaderBoardModel>[];
 
-  bool isLoading = true;
   bool _showError = true;
 
   @override
@@ -39,37 +39,6 @@ class _LeaderBoardViewState extends State<LeaderBoardView> {
       print(e);
     }
   }
-
-  // Future<void> getTeamData() async {
-  //   setState(() {
-  //     isLoading = true;
-  //   });
-
-  //   FirebaseFirestore firestore = FirebaseFirestore.instance;
-
-  //   await firestore
-  //       .collection('leaderboard')
-  //       .get()
-  //       .then((QuerySnapshot querySnapshot) => {
-  //             querySnapshot.docs.forEach((element) async {
-  //               LeaderBoard leaderBoardData = LeaderBoard();
-  //               leaderBoardData.name = element['name'];
-  //               leaderBoardData.event = element['event'];
-  //               leaderBoardData.marks = element['scoredMarks'];
-  //               leaderBoardData.rank = element['rank'];
-  //               // eventData.instagram = element['instagram'];
-  //               // eventData.twitter = element['twitter'];
-  //               // eventData.venue = element['venue'];
-  //               // eventData.tag = element['tag'];
-
-  //               leaderboarditem.add(leaderBoardData);
-  //             })
-  //           });
-  //   print(leaderboarditem.length.toString());
-  //   setState(() {
-  //     isLoading = false;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -129,7 +98,9 @@ class _LeaderBoardViewState extends State<LeaderBoardView> {
                           borderRadius: BorderRadius.all(
                             Radius.circular(20.0),
                           ),
-                          color: Colors.white,
+                          color: ThemeSwitcher.of(context).isDarkModeOn
+                              ? Colors.grey
+                              : Colors.white,
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,

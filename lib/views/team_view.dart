@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'dart:html';
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ccvit/config/assets.dart';
 import 'package:ccvit/models/team_model.dart';
@@ -8,7 +6,6 @@ import 'package:ccvit/widgets/centeredView/centered_view.dart';
 import 'package:ccvit/widgets/footer.dart';
 import 'package:ccvit/widgets/header.dart';
 import 'package:ccvit/widgets/theme_inherited_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_grid/responsive_grid.dart';
@@ -59,28 +56,6 @@ class _TeamViewState extends State<TeamView> {
     });
   }
 
-  // getTeamData() async {
-  //   setState(() {
-  //     isLoading = true;
-  //   });
-  //   FirebaseFirestore firestore = FirebaseFirestore.instance;
-
-  //   await firestore
-  //       .collection('teamData')
-  //       .get()
-  //       .then((QuerySnapshot querySnapshot) => {
-  //             querySnapshot.docs.forEach((doc) async {
-  //               Team teamdata = Team();
-  //               teamdata.name = doc['name'];
-  //               teamdata.imageURL = doc["profileImage"];
-  //               team.add(teamdata);
-  //             })
-  //           });
-  //   setState(() {
-  //     isLoading = false;
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,10 +70,6 @@ class _TeamViewState extends State<TeamView> {
                     : Assets.small_header,
                 page: "TeamHeaderData",
                 active: "team",
-              ),
-              Image.asset(
-                Assets.team,
-                scale: 1.5,
               ),
               !isLoading
                   ? CenteredView(

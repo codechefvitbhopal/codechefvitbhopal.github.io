@@ -4,6 +4,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ccvit/config/assets.dart';
 import 'package:ccvit/models/event_model.dart';
 import 'package:ccvit/widgets/centeredView/centered_view.dart';
+import 'package:ccvit/widgets/footer.dart';
 import 'package:ccvit/widgets/header.dart';
 import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -112,6 +113,7 @@ class _EventViewState extends State<EventView> {
                   : Center(
                       child: CircularProgressIndicator(),
                     ),
+              Footer(),
             ],
           ),
         ),
@@ -267,7 +269,7 @@ class EventCard extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
