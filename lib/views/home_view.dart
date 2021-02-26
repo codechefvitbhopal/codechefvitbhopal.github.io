@@ -13,9 +13,9 @@ class HomeView extends StatelessWidget {
   }) : super(key: key);
 
   final List<String> cardList = [
-    'https://lh6.googleusercontent.com/ebpm7TczoqIXrBsC-0nsFhJqDonYy3ta4qsz9z-y7XDJMMmFGznuG5nYAlYwveoiWuEIuIH9lV83gA=w1760-h947-rw',
-    'https://lh4.googleusercontent.com/-wuefTS0NRR4mX7etaB6RHC-3fM4bLuWWHAXze736ncMBPE8hB2s4ISQWCxPfZzXfWErndP7N-9MyA=w1920-h990-rw',
-    'https://lh6.googleusercontent.com/22x5ILgZJ9-12xi9mQzuk-0YY43fc6t4F_zkk4z-8RfjVtQZBtMGtxS8VTJrcwjfX7z17987-rfXNA=w1920-h990-rw',
+    'assets/events/codeyessey.png',
+    'assets/events/leaders_league.png',
+    'assets/events/resource_buffer.png',
   ];
 
   @override

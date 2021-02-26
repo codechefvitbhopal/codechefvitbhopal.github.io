@@ -29,7 +29,7 @@ class Events extends StatelessWidget {
                     offset: Offset(0, 0),
                   )
                 ]),
-            child: Image.network(
+            child: Image.asset(
               cardList[index],
             ),
           );
