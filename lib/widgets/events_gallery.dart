@@ -18,19 +18,29 @@ class Events extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Container(
             margin: EdgeInsets.symmetric(vertical: 50),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(12),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 8,
-                    color: Colors.grey.shade500,
-                    offset: Offset(0, 0),
-                  )
-                ]),
-            child: Image.asset(
-              cardList[index],
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                blurRadius: 8,
+                color: Colors.grey.shade500,
+                offset: Offset(0, 0),
+              )
+            ]),
+            child: ClipRRect(
+              borderRadius: BorderRadius.all(
+                Radius.circular(12),
+              ),
+              child: Image.asset(
+                cardList[index],
+                fit: BoxFit.fill,
+                errorBuilder: (context, error, stackTrace) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    child: Center(child: Text("😢")),
+                  );
+                },
+              ),
             ),
           );
         },

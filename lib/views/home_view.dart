@@ -3,6 +3,7 @@ import 'package:ccvit/widgets/about_us.dart';
 import 'package:ccvit/widgets/events_gallery.dart';
 import 'package:ccvit/widgets/footer.dart';
 import 'package:ccvit/widgets/header.dart';
+import 'package:ccvit/widgets/responsive_widget.dart';
 import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -51,7 +52,7 @@ class HomeView extends StatelessWidget {
                 height: 10,
               ),
               Events(cardList: cardList),
-              Footer(),
+              Footer(context: context),
             ],
           ),
         ),
@@ -64,15 +65,19 @@ class HomeView extends StatelessWidget {
       //       ),
       //     ),
       //   ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          ThemeSwitcher.of(context).switchDarkMode();
-        },
-        child: ThemeSwitcher.of(context).isDarkModeOn
-            ? Icon(FontAwesomeIcons.sun)
-            : Icon(
-                FontAwesomeIcons.moon,
-              ),
+      floatingActionButton: Container(
+        height: ResponsiveWidget.isMobileScreen(context) ? 38 : 52,
+        child: FloatingActionButton(
+          onPressed: () {
+            ThemeSwitcher.of(context).switchDarkMode();
+          },
+          child: ThemeSwitcher.of(context).isDarkModeOn
+              ? Icon(FontAwesomeIcons.sun)
+              : Icon(
+                  FontAwesomeIcons.moon,
+                  size: ResponsiveWidget.isMobileScreen(context) ? 16 : 24,
+                ),
+        ),
       ),
     );
   }

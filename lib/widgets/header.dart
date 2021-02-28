@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_grid/responsive_grid.dart';
-import 'responsive_widget.dart';
 import 'centeredView/centered_view.dart';
 
 import 'dart:html' as html;
