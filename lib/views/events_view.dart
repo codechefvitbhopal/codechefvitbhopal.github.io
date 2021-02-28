@@ -6,6 +6,7 @@ import 'package:ccvit/models/event_model.dart';
 import 'package:ccvit/widgets/centeredView/centered_view.dart';
 import 'package:ccvit/widgets/footer.dart';
 import 'package:ccvit/widgets/header.dart';
+import 'package:ccvit/widgets/responsive_widget.dart';
 import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -71,13 +72,23 @@ class _EventViewState extends State<EventView> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Header(
-                headerImage: ThemeSwitcher.of(context).isDarkModeOn
-                    ? Assets.small_header_dark
-                    : Assets.small_header,
-                page: "EventHeaderData",
-                active: "event",
-              ),
+              !ResponsiveWidget.isMediumScreen(context)
+                  ? Container(
+                      margin: EdgeInsets.only(top: 20),
+                      child: Text(
+                        "Events",
+                        style: TextStyle(
+                          fontSize: 36.0,
+                        ),
+                      ),
+                    )
+                  : Header(
+                      headerImage: ThemeSwitcher.of(context).isDarkModeOn
+                          ? Assets.small_header_dark
+                          : Assets.small_header,
+                      page: "EventHeaderData",
+                      active: "event",
+                    ),
               !isLoading
                   ? event.isNotEmpty
                       ? CenteredView(
@@ -88,7 +99,7 @@ class _EventViewState extends State<EventView> {
                               event.length,
                               (index) => ResponsiveGridCol(
                                 xl: 3,
-                                lg: 4,
+                                lg: 3,
                                 md: 4,
                                 sm: 6,
                                 xs: 12,
@@ -113,7 +124,9 @@ class _EventViewState extends State<EventView> {
                   : Center(
                       child: CircularProgressIndicator(),
                     ),
-              Footer(),
+              Footer(
+                context: context,
+              ),
             ],
           ),
         ),

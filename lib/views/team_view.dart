@@ -5,6 +5,7 @@ import 'package:ccvit/models/team_model.dart';
 import 'package:ccvit/widgets/centeredView/centered_view.dart';
 import 'package:ccvit/widgets/footer.dart';
 import 'package:ccvit/widgets/header.dart';
+import 'package:ccvit/widgets/responsive_widget.dart';
 import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -64,13 +65,23 @@ class _TeamViewState extends State<TeamView> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Header(
-                headerImage: ThemeSwitcher.of(context).isDarkModeOn
-                    ? Assets.small_header_dark
-                    : Assets.small_header,
-                page: "TeamHeaderData",
-                active: "team",
-              ),
+              !ResponsiveWidget.isMediumScreen(context)
+                  ? Container(
+                      margin: EdgeInsets.only(top: 20),
+                      child: Text(
+                        "Team",
+                        style: TextStyle(
+                          fontSize: 36.0,
+                        ),
+                      ),
+                    )
+                  : Header(
+                      headerImage: ThemeSwitcher.of(context).isDarkModeOn
+                          ? Assets.small_header_dark
+                          : Assets.small_header,
+                      page: "TeamHeaderData",
+                      active: "team",
+                    ),
               !isLoading
                   ? CenteredView(
                       horizontal: 10,
@@ -79,6 +90,9 @@ class _TeamViewState extends State<TeamView> {
                         children: List.generate(
                           team.length,
                           (index) => ResponsiveGridCol(
+                            sm: 6,
+                            md: 4,
+                            lg: 3,
                             xl: 3,
                             child: TeamMemberCard(
                               name: team[index].name,
@@ -96,7 +110,9 @@ class _TeamViewState extends State<TeamView> {
                   : Center(
                       child: CircularProgressIndicator(),
                     ),
-              Footer(),
+              Footer(
+                context: context,
+              ),
             ],
           ),
         ),
@@ -137,7 +153,11 @@ class TeamMemberCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(20.0),
+      margin: EdgeInsets.only(
+        left: 20.0,
+        bottom: 20.0,
+        right: 20.0,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
           Radius.circular(20.0),
