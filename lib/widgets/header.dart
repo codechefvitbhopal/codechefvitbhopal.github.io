@@ -247,9 +247,9 @@ class _HeaderState extends State<Header> {
                       },
                       icon: Icon(
                         FontAwesomeIcons.bars,
-                        size: 16, //TODO: have to chnage
                         color: Colors.white,
-                      )),
+                      ),
+                    ),
             ],
           ),
         ),
@@ -345,7 +345,7 @@ class _HomeHeaderDataState extends State<HomeHeaderData> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-          top: ResponsiveWidget.isMobileScreen(context) ? 20 : 120),
+          top: ResponsiveWidget.isMobileScreen(context) ? 60 : 120),
       height: ResponsiveWidget.isMobileScreen(context) ? 240 : 650,
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -362,7 +362,7 @@ class _HomeHeaderDataState extends State<HomeHeaderData> {
           children: [
             Container(
               margin: EdgeInsets.only(
-                  top: ResponsiveWidget.isMobileScreen(context) ? 30 : 70),
+                  top: ResponsiveWidget.isMobileScreen(context) ? 20 : 70),
               child: Image.asset(
                 ThemeSwitcher.of(context).isDarkModeOn
                     ? Assets.logo_shadow_dark
@@ -399,7 +399,7 @@ class _HomeHeaderDataState extends State<HomeHeaderData> {
               },
               child: Container(
                 margin: EdgeInsets.only(
-                    top: ResponsiveWidget.isMobileScreen(context) ? 10 : 120),
+                    top: ResponsiveWidget.isMobileScreen(context) ? 5 : 120),
                 width: ResponsiveWidget.isMobileScreen(context) ? 80 : 260,
                 height: ResponsiveWidget.isMobileScreen(context) ? 20 : 80,
                 decoration: BoxDecoration(
