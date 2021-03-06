@@ -14,5 +14,3 @@ jobs:
         with:
           channel: 'stable'
       - uses: erickzanardo/flutter-gh-pages@v2
-        with:
-          workingDir: docs
