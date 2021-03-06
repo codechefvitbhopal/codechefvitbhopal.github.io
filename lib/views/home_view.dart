@@ -25,6 +25,7 @@ class HomeView extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Header(
                 headerImage: ThemeSwitcher.of(context).isDarkModeOn

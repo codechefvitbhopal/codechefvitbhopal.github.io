@@ -358,11 +358,11 @@ class _HomeHeaderDataState extends State<HomeHeaderData> {
       ),
       child: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               margin: EdgeInsets.only(
-                  top: ResponsiveWidget.isMobileScreen(context) ? 20 : 70),
+                  top: ResponsiveWidget.isMobileScreen(context) ? 0 : 70),
               child: Image.asset(
                 ThemeSwitcher.of(context).isDarkModeOn
                     ? Assets.logo_shadow_dark
@@ -377,7 +377,7 @@ class _HomeHeaderDataState extends State<HomeHeaderData> {
                   ? Assets.cc_vit_chapter_dark
                   : Assets.cc_vit_chapter,
               scale: ResponsiveWidget.isMobileScreen(context)
-                  ? 1 / MediaQuery.of(context).size.width * 1200
+                  ? 1 / MediaQuery.of(context).size.width * 1400
                   : 1.5,
             ),
             InkWell(
