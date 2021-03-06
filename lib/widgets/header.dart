@@ -48,7 +48,7 @@ class _HeaderState extends State<Header> {
               Container(
                 child: Image.asset(
                   Assets.logo_white,
-                  scale: ResponsiveWidget.isMobileScreen(context) ? 4 : 1.5,
+                  scale: ResponsiveWidget.isMobileScreen(context) ? 32 : 24,
                 ),
               ),
               MediaQuery.of(context).size.width > 900

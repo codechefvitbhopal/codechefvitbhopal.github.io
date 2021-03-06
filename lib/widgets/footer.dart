@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:html' as html;
 
-import 'package:responsive_grid/responsive_grid.dart';
-
 class Footer extends StatelessWidget {
   final BuildContext context;
   const Footer({
@@ -35,7 +33,9 @@ class Footer extends StatelessWidget {
               children: [
                 Image.asset(
                   Assets.logo_white,
-                  scale: ResponsiveWidget.isMobileScreen(context) ? 3 : 1.5,
+                  scale: ResponsiveWidget.isMobileScreen(context)
+                      ? MediaQuery.of(context).size.width * 42 / 400
+                      : 25,
                 ),
                 Text(
                   "VIT BHOPAL CHAPER",
