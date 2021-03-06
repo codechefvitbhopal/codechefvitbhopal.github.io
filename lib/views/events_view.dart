@@ -13,7 +13,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 
-import 'package:http/http.dart' as http;
 import 'dart:html' as html;
 
 class EventView extends StatefulWidget {
@@ -200,6 +199,7 @@ class EventCard extends StatelessWidget {
               loadingBuilder: (BuildContext context, Widget child,
                   ImageChunkEvent loadingProgress) {
                 if (loadingProgress == null) return child;
+
                 return Center(
                   child: CircularProgressIndicator(
                     value: loadingProgress.expectedTotalBytes != null

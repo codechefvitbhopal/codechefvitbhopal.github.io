@@ -1,11 +1,16 @@
+import 'package:ccvit/config/assets.dart';
+import 'package:ccvit/models/event_model.dart';
 import 'package:ccvit/models/leaderBoard.dart';
+import 'package:ccvit/views/leaderBoardData.dart';
 import 'package:ccvit/widgets/centeredView/centered_view.dart';
 import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_grid/responsive_grid.dart';
 
 import '../models/sheetModel.dart';
 import '../controller/sheetController.dart';
+import 'dart:html' as html;
 
 class LeaderBoardView extends StatefulWidget {
   @override
@@ -13,40 +18,47 @@ class LeaderBoardView extends StatefulWidget {
 }
 
 class _LeaderBoardViewState extends State<LeaderBoardView> {
-  bool _loadingData = true;
-  List<LeaderBoard> leaderboarditem = <LeaderBoard>[];
-  List<LeaderBoardModel> leaderBoardItems = <LeaderBoardModel>[];
-
-  bool _showError = true;
+  List<Event> event = <Event>[];
+  bool isLoading = true;
 
   @override
   void initState() {
     super.initState();
-    getLeaderBoardData();
+    getEventData();
   }
 
-  void getLeaderBoardData() {
-    try {
-      SheetController().getFeedbackList().then((leaderBoardItems) {
-        setState(() {
-          this.leaderBoardItems = leaderBoardItems.reversed.toList();
+  Future<void> getEventData() async {
+    setState(() {
+      isLoading = true;
+    });
 
-          _showError = false;
-          _loadingData = false;
-        });
-      });
-    } catch (e) {
-      print(e);
-    }
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+    await firestore
+        .collection('eventsData')
+        .get()
+        .then((QuerySnapshot querySnapshot) => {
+              querySnapshot.docs.forEach((element) async {
+                Event eventData = Event();
+                eventData.image = element['image'];
+                eventData.name = element['name'];
+                eventData.leaderBoadrdSheetLink = element['rankingData'];
+                event.add(eventData);
+              })
+            });
+    print(event.length.toString());
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    if (_loadingData)
+    if (isLoading)
       return Center(
         child: CircularProgressIndicator(),
       );
-    if (_showError) {
+    if (isLoading) {
       return Center(
           child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -60,13 +72,13 @@ class _LeaderBoardViewState extends State<LeaderBoardView> {
           ),
           ElevatedButton(
             child: Text(
-              'Retry',
+              'Refresh',
               style: Theme.of(context)
                   .textTheme
                   .button
                   .copyWith(color: Colors.white),
             ),
-            onPressed: getLeaderBoardData,
+            onPressed: () => html.window.location.reload(),
           )
         ],
       ));
@@ -87,76 +99,29 @@ class _LeaderBoardViewState extends State<LeaderBoardView> {
                     ),
                   ),
                 ),
-                Container(
-                  height: 500,
-                  child: ListView.builder(
-                    itemCount: leaderBoardItems.length,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        margin: EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20.0),
-                          ),
-                          color: ThemeSwitcher.of(context).isDarkModeOn
-                              ? Colors.grey
-                              : Colors.white,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              // margin: EdgeInsets.all(8.0),
-                              padding: EdgeInsets.all(
-                                20.0,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(20.0),
-                                  bottomLeft: Radius.circular(20.0),
-                                ),
-                                color: Colors.blue,
-                              ),
-                              child: Center(
-                                child: Text(
-                                  leaderBoardItems[index].rank,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: Text(leaderBoardItems[index].name),
-                            ),
-                            leaderBoardItems[index].score.isNotEmpty
-                                ? Container(
-                                    // margin: EdgeInsets.all(8.0),
-                                    padding: EdgeInsets.all(
-                                      20.0,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                        topRight: Radius.circular(20.0),
-                                        bottomRight: Radius.circular(20.0),
-                                      ),
-                                      color: Colors.blue,
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        leaderBoardItems[index].score,
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                : Container(),
-                          ],
-                        ),
-                      );
-                    },
+                ResponsiveGridRow(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: List.generate(
+                    event.length,
+                    (index) => ResponsiveGridCol(
+                      xl: 3,
+                      lg: 3,
+                      md: 4,
+                      sm: 6,
+                      xs: 12,
+                      child: EventCard(
+                        name: event[index].name,
+                        image: Image.network(event[index].image),
+                        viewResult: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => LeaderBoarData(
+                                        url: event[index].leaderBoadrdSheetLink,
+                                      )));
+                        },
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -170,6 +135,80 @@ class _LeaderBoardViewState extends State<LeaderBoardView> {
         },
         child: Icon(
           Icons.arrow_back,
+        ),
+      ),
+    );
+  }
+}
+
+class EventCard extends StatelessWidget {
+  final Image image;
+  final String name;
+  final Function viewResult;
+
+  const EventCard({
+    Key key,
+    this.image,
+    this.name,
+    this.viewResult,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(20.0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(20.0),
+        ),
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 8,
+            color: ThemeSwitcher.of(context).isDarkModeOn
+                ? Color(0xff494949)
+                : Colors.grey.shade400,
+            offset: Offset(0, 2),
+          ),
+        ],
+        color: ThemeSwitcher.of(context).isDarkModeOn
+            ? Color(0xff414141)
+            : Colors.white,
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.all(
+          Radius.circular(20.0),
+        ),
+        child: Column(
+          children: [
+            image,
+            Container(
+              padding: EdgeInsets.only(
+                top: 12.0,
+                bottom: 6,
+              ),
+              width: MediaQuery.of(context).size.width,
+              color: ThemeSwitcher.of(context).isDarkModeOn
+                  ? Color(0xff414141)
+                  : Colors.white,
+              alignment: Alignment.center,
+              child: Text(name),
+            ),
+            TextButton(
+              onPressed: viewResult,
+              child: Container(
+                padding: const EdgeInsets.only(bottom: 6.0, top: 6.0),
+                width: MediaQuery.of(context).size.width,
+                color: Colors.blue,
+                alignment: Alignment.center,
+                child: Text(
+                  "View Ranking",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

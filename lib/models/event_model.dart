@@ -11,4 +11,5 @@ class Event {
   String medium;
   String image;
   String tag;
+  String leaderBoadrdSheetLink;
 }
