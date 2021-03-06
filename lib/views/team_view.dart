@@ -26,7 +26,7 @@ class _TeamViewState extends State<TeamView> {
   void initState() {
     super.initState();
     getTeamData(
-        "https://raw.githubusercontent.com/woinbo/ccvitbhopal/main/json/teams.json");
+        "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/json/teams.json");
   }
 
   Future<void> getTeamData(String incomingUrl) async {
