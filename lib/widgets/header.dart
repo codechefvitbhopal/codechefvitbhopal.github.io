@@ -535,7 +535,8 @@ _showMaterialDialog(context) {
                 child: ConstrainedBox(
                   constraints: BoxConstraints(maxWidth: 60),
                   child: InkWell(
-                    onTap: () => html.window.open(Constants.DISCORD, "discord"),
+                    onTap: () =>
+                        html.window.open(Constants.CHAPTER_LINK, "chapter"),
                     child: Image.asset(
                       Assets.logo_shadow,
                       scale: 6,

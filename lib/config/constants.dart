@@ -14,4 +14,6 @@ class Constants {
       'https://www.youtube.com/channel/UCnN2MXUF5ufqof-VSsXVn7Q';
   static const DISCORD =
       'https://discord.com/channels/776389979466629130/776397809426628628';
+
+  static const CHAPTER_LINK = 'https://www.codechef.com/college-chapter/member';
 }
