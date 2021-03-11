@@ -1,4 +1,5 @@
 import 'dart:html' as html;
+import 'package:ccvit/config/assets.dart';
 import 'package:ccvit/models/blog_model.dart';
 import 'package:ccvit/providers/api_provider.dart';
 import 'package:ccvit/widgets/centeredView/centered_view.dart';
@@ -60,14 +61,11 @@ class _BlogTabState extends State<BlogTab> {
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only(bottom: 20),
-                child: Text(
-                  "Articles",
-                  style: TextStyle(
-                    fontSize: 36.0,
-                  ),
-                ),
-              ),
+                  margin: EdgeInsets.only(bottom: 20),
+                  child: Image.asset(
+                    Assets.article,
+                    scale: 5,
+                  )),
               blogList(),
             ],
           ),
@@ -168,27 +166,39 @@ class BlogCard extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Image.network(
-              image,
-              loadingBuilder: (BuildContext context, Widget child,
-                  ImageChunkEvent loadingProgress) {
-                if (loadingProgress == null) return child;
-                return Center(
-                  child: CircularProgressIndicator(
-                    value: loadingProgress.expectedTotalBytes != null
-                        ? loadingProgress.cumulativeBytesLoaded /
-                            loadingProgress.expectedTotalBytes
-                        : null,
+            Container(
+              width: MediaQuery.of(context).size.width,
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxHeight: 200,
+                  maxWidth: MediaQuery.of(context).size.width,
+                ),
+                child: Image.network(
+                  image,
+                  loadingBuilder: (BuildContext context, Widget child,
+                      ImageChunkEvent loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return Center(
+                      child: CircularProgressIndicator(
+                        value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded /
+                                loadingProgress.expectedTotalBytes
+                            : null,
+                      ),
+                    );
+                  },
+                  errorBuilder: (context, error, stackTrace) => Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Center(
+                      child: Text(
+                        'Unable to load or image not available',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
                   ),
-                );
-              },
-              errorBuilder: (context, error, stackTrace) => Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Center(
-                  child: Text('😢'),
+                  fit: BoxFit.fill,
                 ),
               ),
-              fit: BoxFit.cover,
             ),
             Container(
               padding: EdgeInsets.only(top: 12.0, bottom: 12.0),

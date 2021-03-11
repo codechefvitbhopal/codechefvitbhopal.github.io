@@ -1,6 +1,5 @@
-import 'dart:convert';
+import 'dart:ui';
 
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ccvit/config/assets.dart';
 import 'package:ccvit/models/event_model.dart';
 import 'package:ccvit/widgets/centeredView/centered_view.dart';
@@ -27,10 +26,10 @@ class _EventViewState extends State<EventView> {
   @override
   void initState() {
     super.initState();
-    getTeamData();
+    getEventData();
   }
 
-  Future<void> getTeamData() async {
+  Future<void> getEventData() async {
     setState(() {
       isLoading = true;
     });
@@ -45,6 +44,7 @@ class _EventViewState extends State<EventView> {
                 Event eventData = Event();
                 eventData.image = element['image'];
                 eventData.name = element['name'];
+                eventData.des = element['desc'];
                 // eventData.registrationLink = element['registrationLink'];
                 // eventData.github = element['github'];
                 // eventData.linkedin = element['linkedin'];
@@ -74,11 +74,9 @@ class _EventViewState extends State<EventView> {
               !ResponsiveWidget.isMediumScreen(context)
                   ? Container(
                       margin: EdgeInsets.only(top: 20),
-                      child: Text(
-                        "Events",
-                        style: TextStyle(
-                          fontSize: 36.0,
-                        ),
+                      child: Image.asset(
+                        Assets.events,
+                        scale: 5,
                       ),
                     )
                   : Header(
@@ -104,6 +102,7 @@ class _EventViewState extends State<EventView> {
                                 xs: 12,
                                 child: EventCard(
                                   name: event[index].name,
+                                  desc: event[index].des,
                                   image: event[index].image,
                                   github: event[index].github,
                                   linkedin: event[index].linkedin,
@@ -145,6 +144,7 @@ class _EventViewState extends State<EventView> {
 class EventCard extends StatelessWidget {
   final String image;
   final String name;
+  final String desc;
   final String linkedin;
   final String github;
   final String medium;
@@ -157,6 +157,7 @@ class EventCard extends StatelessWidget {
       {Key key,
       this.image,
       this.name,
+      this.desc,
       this.github,
       this.linkedin,
       this.medium,
@@ -194,28 +195,40 @@ class EventCard extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Image.network(
-              image,
-              loadingBuilder: (BuildContext context, Widget child,
-                  ImageChunkEvent loadingProgress) {
-                if (loadingProgress == null) return child;
+            Container(
+              width: MediaQuery.of(context).size.width,
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxHeight: 200,
+                  maxWidth: MediaQuery.of(context).size.width,
+                ),
+                child: Image.network(
+                  image,
+                  loadingBuilder: (BuildContext context, Widget child,
+                      ImageChunkEvent loadingProgress) {
+                    if (loadingProgress == null) return child;
 
-                return Center(
-                  child: CircularProgressIndicator(
-                    value: loadingProgress.expectedTotalBytes != null
-                        ? loadingProgress.cumulativeBytesLoaded /
-                            loadingProgress.expectedTotalBytes
-                        : null,
+                    return Center(
+                      child: CircularProgressIndicator(
+                        value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded /
+                                loadingProgress.expectedTotalBytes
+                            : null,
+                      ),
+                    );
+                  },
+                  errorBuilder: (context, error, stackTrace) => Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Center(
+                      child: Text(
+                        'Unable to load or image not available',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
                   ),
-                );
-              },
-              errorBuilder: (context, error, stackTrace) => Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Center(
-                  child: Text('😢'),
+                  fit: BoxFit.fill,
                 ),
               ),
-              fit: BoxFit.cover,
             ),
             Container(
               color: ThemeSwitcher.of(context).isDarkModeOn
@@ -269,7 +282,7 @@ class EventCard extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () => html.window.open(medium, "medium"),
+              onPressed: () => _showMaterialDialog(context, name, desc),
               child: Container(
                 padding: const EdgeInsets.only(bottom: 6.0, top: 6.0),
                 width: MediaQuery.of(context).size.width,
@@ -288,4 +301,17 @@ class EventCard extends StatelessWidget {
       ),
     );
   }
+}
+
+_showMaterialDialog(context, name, dec) {
+  showDialog(
+    context: context,
+    builder: (_) => AlertDialog(
+      title: Center(
+        child: Text(name),
+      ),
+      content: ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: 500), child: Text(dec)),
+    ),
+  );
 }

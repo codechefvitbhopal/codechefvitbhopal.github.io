@@ -8,4 +8,5 @@ class Team {
   String twitter;
   String bio;
   String designation;
+  String tag;
 }

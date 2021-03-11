@@ -3,6 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ccvit/config/assets.dart';
 import 'package:ccvit/models/team_model.dart';
 import 'package:ccvit/widgets/centeredView/centered_view.dart';
+import 'package:ccvit/widgets/divider.dart';
 import 'package:ccvit/widgets/footer.dart';
 import 'package:ccvit/widgets/header.dart';
 import 'package:ccvit/widgets/responsive_widget.dart';
@@ -26,7 +27,8 @@ class _TeamViewState extends State<TeamView> {
   void initState() {
     super.initState();
     getTeamData(
-        "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/json/teams.json");
+        "https://gist.githubusercontent.com/woinbo/78c767a60a12b23b827363d087b5fd79/raw/9b27caddb84bf1a9798f2e13c916f5449ba903b5/teams.json");
+    // getTeamData("https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/json/teams.json");
   }
 
   Future<void> getTeamData(String incomingUrl) async {
@@ -37,20 +39,27 @@ class _TeamViewState extends State<TeamView> {
 
     var response = await http.get(url);
     var jsonData = jsonDecode(response.body);
-
+    print(response);
+    print(jsonData);
     jsonData['team'].forEach((element) {
-      Team teamMember = Team();
-      teamMember.imageURL = element['imageURL'];
-      teamMember.name = element['name'];
-      teamMember.designation = element['designation'];
-      teamMember.bio = element['bio'];
-      teamMember.github = element['social']['github'];
-      teamMember.linkedin = element['social']['linkedin'];
-      teamMember.instagram = element['social']['instagram'];
-      teamMember.twitter = element['social']['twitter'];
-      teamMember.medium = element['social']['medium'];
+      if (element['tag'] != null) {
+        Team teamMember = Team();
+        teamMember.tag = element['tag'];
+        team.add(teamMember);
+      } else {
+        Team teamMember = Team();
+        teamMember.imageURL = element['imageURL'];
+        teamMember.name = element['name'];
+        teamMember.designation = element['designation'];
+        teamMember.bio = element['bio'];
+        teamMember.github = element['social']['github'];
+        teamMember.linkedin = element['social']['linkedin'];
+        teamMember.instagram = element['social']['instagram'];
+        teamMember.twitter = element['social']['twitter'];
+        teamMember.medium = element['social']['medium'];
 
-      team.add(teamMember);
+        team.add(teamMember);
+      }
     });
     setState(() {
       isLoading = false;
@@ -60,63 +69,102 @@ class _TeamViewState extends State<TeamView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              !ResponsiveWidget.isMediumScreen(context)
-                  ? Container(
-                      margin: EdgeInsets.only(top: 20),
-                      child: Text(
-                        "Team",
-                        style: TextStyle(
-                          fontSize: 36.0,
-                        ),
-                      ),
-                    )
-                  : Header(
-                      headerImage: ThemeSwitcher.of(context).isDarkModeOn
-                          ? Assets.small_header_dark
-                          : Assets.small_header,
-                      page: "TeamHeaderData",
-                      active: "team",
+      body: !isLoading
+          ? Container(
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    !ResponsiveWidget.isMediumScreen(context)
+                        ? Container(
+                            margin: EdgeInsets.symmetric(horizontal: 20),
+                            child: Image.asset(
+                              Assets.team,
+                              scale: 5,
+                            ),
+                          )
+                        : Header(
+                            headerImage: ThemeSwitcher.of(context).isDarkModeOn
+                                ? Assets.small_header_dark
+                                : Assets.small_header,
+                            page: "TeamHeaderData",
+                            active: "team",
+                          ),
+                    ConstrainedBox(
+                      constraints: BoxConstraints(maxWidth: 300),
+                      child: divider("Faculty Advisor"),
                     ),
-              !isLoading
-                  ? CenteredView(
+                    ConstrainedBox(
+                      constraints: BoxConstraints(maxWidth: 300),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          ResponsiveGridCol(
+                            sm: 12,
+                            md: 12,
+                            lg: 12,
+                            xl: 12,
+                            child: TeamMemberCard(
+                              name: team[0].name,
+                              image: team[0].imageURL,
+                              github: team[0].github,
+                              linkedin: team[0].linkedin,
+                              twitter: team[0].twitter,
+                              instagram: team[0].instagram,
+                              designation: team[0].designation,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    CenteredView(
                       horizontal: 10,
+                      vertical: 20,
                       child: ResponsiveGridRow(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: List.generate(
-                          team.length,
-                          (index) => ResponsiveGridCol(
-                            sm: 6,
-                            md: 4,
-                            lg: 3,
-                            xl: 3,
-                            child: TeamMemberCard(
-                              name: team[index].name,
-                              image: team[index].imageURL,
-                              github: team[index].github,
-                              linkedin: team[index].linkedin,
-                              twitter: team[index].twitter,
-                              instagram: team[index].instagram,
-                              designation: team[index].designation,
-                            ),
-                          ),
+                          team.length - 1,
+                          (index) => team[index + 1].tag == null
+                              ? ResponsiveGridCol(
+                                  sm: 6,
+                                  md: 4,
+                                  lg: 3,
+                                  xl: 3,
+                                  child: TeamMemberCard(
+                                    name: team[index + 1].name,
+                                    image: team[index + 1].imageURL,
+                                    github: team[index + 1].github,
+                                    linkedin: team[index + 1].linkedin,
+                                    twitter: team[index + 1].twitter,
+                                    instagram: team[index + 1].instagram,
+                                    designation: team[index + 1].designation,
+                                  ),
+                                )
+                              : ResponsiveGridCol(
+                                  sm: 12,
+                                  md: 12,
+                                  lg: 12,
+                                  xl: 12,
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 30),
+                                    child: divider(team[index + 1].tag),
+                                  ),
+                                ),
                         ),
                       ),
-                    )
-                  : Center(
-                      child: CircularProgressIndicator(),
                     ),
-              Footer(
-                context: context,
+                    Footer(
+                      context: context,
+                    ),
+                  ],
+                ),
               ),
-            ],
-          ),
-        ),
-      ),
+            )
+          : Center(
+              child: CircularProgressIndicator(),
+            ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pop(context);
@@ -154,6 +202,7 @@ class TeamMemberCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
+        top: 20,
         left: 20.0,
         bottom: 20.0,
         right: 20.0,
@@ -198,7 +247,10 @@ class TeamMemberCard extends StatelessWidget {
               errorBuilder: (context, error, stackTrace) => Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Center(
-                  child: Text('😢'),
+                  child: Text(
+                    'Unable to load or image not available',
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
               fit: BoxFit.cover,

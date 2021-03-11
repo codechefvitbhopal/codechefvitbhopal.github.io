@@ -9,6 +9,7 @@ import 'package:ccvit/views/team_view.dart';
 import 'package:ccvit/widgets/responsive_widget.dart';
 import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_grid/responsive_grid.dart';
@@ -48,7 +49,7 @@ class _HeaderState extends State<Header> {
               Container(
                 child: Image.asset(
                   Assets.logo_white,
-                  scale: ResponsiveWidget.isMobileScreen(context) ? 32 : 24,
+                  scale: ResponsiveWidget.isMobileScreen(context) ? 5 : 3,
                 ),
               ),
               MediaQuery.of(context).size.width > 900
@@ -340,104 +341,56 @@ class HomeHeaderData extends StatefulWidget {
 }
 
 class _HomeHeaderDataState extends State<HomeHeaderData> {
-  bool _isHover = false;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(
-          top: ResponsiveWidget.isMobileScreen(context) ? 60 : 120),
-      height: ResponsiveWidget.isMobileScreen(context) ? 240 : 650,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(
-            ThemeSwitcher.of(context).isDarkModeOn
-                ? Assets.main_dark
-                : Assets.main,
-          ),
+    return Stack(alignment: Alignment.bottomCenter, children: [
+      Container(
+        margin: EdgeInsets.only(
+            top: ResponsiveWidget.isMobileScreen(context) ? 60 : 120),
+        height: ResponsiveWidget.isMobileScreen(context) ? 240 : 650,
+        width: MediaQuery.of(context).size.width,
+        child: Image.asset(
+          ThemeSwitcher.of(context).isDarkModeOn
+              ? Assets.main_dark
+              : Assets.main,
         ),
       ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              margin: EdgeInsets.only(
-                  top: ResponsiveWidget.isMobileScreen(context) ? 0 : 70),
-              child: Image.asset(
-                ThemeSwitcher.of(context).isDarkModeOn
-                    ? Assets.logo_shadow_dark
-                    : Assets.logo_shadow,
-                scale: ResponsiveWidget.isMobileScreen(context)
-                    ? 1 / MediaQuery.of(context).size.width * 1000
-                    : 1.5,
-              ),
-            ),
-            Image.asset(
-              ThemeSwitcher.of(context).isDarkModeOn
-                  ? Assets.cc_vit_chapter_dark
-                  : Assets.cc_vit_chapter,
-              scale: ResponsiveWidget.isMobileScreen(context)
-                  ? 1 / MediaQuery.of(context).size.width * 1400
-                  : 1.5,
-            ),
-            InkWell(
+      Positioned(
+        bottom: ResponsiveWidget.isMobileScreen(context) ? 25 : 60,
+        child: InkWell(
+          borderRadius: BorderRadius.all(
+            Radius.circular(50),
+          ),
+          onTap: () {
+            _showMaterialDialog(context);
+          },
+          child: Container(
+            width: ResponsiveWidget.isMobileScreen(context) ? 80 : 260,
+            height: ResponsiveWidget.isMobileScreen(context) ? 20 : 80,
+            decoration: BoxDecoration(
               borderRadius: BorderRadius.all(
                 Radius.circular(50),
               ),
-              onTap: () {
-                html.window.open(Constants.DISCORD, "discord");
-              },
-              onHover: (h) {
-                setState(() {
-                  _isHover = h;
-                });
-              },
-              onFocusChange: (h) {
-                setState(() {
-                  _isHover = h;
-                });
-              },
-              child: Container(
-                margin: EdgeInsets.only(
-                    top: ResponsiveWidget.isMobileScreen(context) ? 5 : 120),
-                width: ResponsiveWidget.isMobileScreen(context) ? 80 : 260,
-                height: ResponsiveWidget.isMobileScreen(context) ? 20 : 80,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(50),
-                  ),
-                  color: ThemeSwitcher.of(context).isDarkModeOn
-                      ? Color(0xff494949)
-                      : Color(0xff4A74F5),
-                ),
-                child: Center(
-                  child: !_isHover
-                      ? Text(
-                          "JOIN US TODAY",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: "Segoe UI",
-                            fontSize: ResponsiveWidget.isMobileScreen(context)
-                                ? 8
-                                : 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        )
-                      : Icon(
-                          FontAwesomeIcons.discord,
-                          color: Colors.white,
-                          size: ResponsiveWidget.isMobileScreen(context)
-                              ? 12
-                              : 32,
-                        ),
-                ),
+              color: ThemeSwitcher.of(context).isDarkModeOn
+                  ? Color(0xff494949)
+                  : Color(0xff4A74F5),
+            ),
+            child: Center(
+                child: Text(
+              "JOIN US TODAY",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: "Segoe UI",
+                letterSpacing: ResponsiveWidget.isMobileScreen(context) ? 0 : 3,
+                fontSize: ResponsiveWidget.isMobileScreen(context) ? 8 : 22,
+                fontWeight: FontWeight.bold,
               ),
-            )
-          ],
+            )),
+          ),
         ),
       ),
-    );
+    ]);
   }
 }
 
@@ -521,4 +474,75 @@ class _NavBoxItem extends StatelessWidget {
       ),
     );
   }
+}
+
+_showMaterialDialog(context) {
+  showDialog(
+      context: context,
+      builder: (_) => new AlertDialog(
+          title: Center(
+            child: Text("Join us on"),
+          ),
+          content: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ResponsiveGridCol(
+                xl: 1,
+                child: Container(
+                  height: 60,
+                  child: InkWell(
+                    onTap: () => html.window.open(Constants.DISCORD, "discord"),
+                    child: Icon(FontAwesomeIcons.discord),
+                  ),
+                ),
+              ),
+              ResponsiveGridCol(
+                xl: 1,
+                child: Container(
+                  height: 60,
+                  child: InkWell(
+                    onTap: () => html.window
+                        .open(Constants.PROFILE_INSTAGRAM, "instagram"),
+                    child: Icon(FontAwesomeIcons.instagram),
+                  ),
+                ),
+              ),
+              ResponsiveGridCol(
+                xl: 1,
+                child: Container(
+                  height: 60,
+                  child: InkWell(
+                    onTap: () =>
+                        html.window.open(Constants.PROFILE_MEDIUM, "medium"),
+                    child: Icon(FontAwesomeIcons.medium),
+                  ),
+                ),
+              ),
+              ResponsiveGridCol(
+                xl: 1,
+                child: Container(
+                  height: 60,
+                  child: InkWell(
+                    onTap: () =>
+                        html.window.open(Constants.PROFILE_TWITTER, "twitter"),
+                    child: Icon(FontAwesomeIcons.twitter),
+                  ),
+                ),
+              ),
+              ResponsiveGridCol(
+                xl: 1,
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 60),
+                  child: InkWell(
+                    onTap: () => html.window.open(Constants.DISCORD, "discord"),
+                    child: Image.asset(
+                      Assets.logo_shadow,
+                      scale: 6,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          )));
 }

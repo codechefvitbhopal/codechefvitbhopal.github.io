@@ -2,9 +2,14 @@ import 'package:ccvit/config/assets.dart';
 import 'package:ccvit/config/constants.dart';
 import 'package:ccvit/widgets/responsive_widget.dart';
 import 'package:ccvit/widgets/theme_inherited_widget.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mailto/mailto.dart';
 import 'dart:html' as html;
+
+import 'package:url_launcher/url_launcher.dart';
 
 class Footer extends StatelessWidget {
   final BuildContext context;
@@ -31,14 +36,14 @@ class Footer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  Assets.logo_white,
-                  scale: ResponsiveWidget.isMobileScreen(context)
-                      ? MediaQuery.of(context).size.width * 42 / 400
-                      : 25,
-                ),
+                !ResponsiveWidget.isSmallScreen(context)
+                    ? Image.asset(
+                        Assets.logo_white,
+                        scale: 3,
+                      )
+                    : Container(),
                 Text(
-                  "VIT BHOPAL CHAPER",
+                  "VIT BHOPAL CHAPTER",
                   style: TextStyle(
                     color: Colors.white,
                     fontFamily: "Segoe UI",
@@ -74,7 +79,8 @@ class Footer extends StatelessWidget {
                       top:
                           ResponsiveWidget.isMobileScreen(context) ? 0.0 : 8.0),
                   child: Text(
-                    "contact us at codechef@vitbhopal.ac.in",
+                    "© Copyright 2021 | CodeChef-VIT Bhopal | All rights reserved",
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
                       fontFamily: "Segoe UI",
@@ -82,19 +88,29 @@ class Footer extends StatelessWidget {
                     ),
                   ),
                 ),
-                ResponsiveWidget.isMobileScreen(context)
-                    ? Container()
-                    : Container(
-                        margin: const EdgeInsets.only(top: 2.0, bottom: 2.0),
-                        child: Text(
-                          "Developed and designed by WOINBO with ❤️",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: "Segoe UI",
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      ),
+                SizedBox(
+                  height: 8,
+                ),
+                InkWell(
+                  onTap: () async {
+                    try {
+                      final mailtoLink = Mailto(
+                        to: ['codechef@vitbhopal.ac.in'],
+                        cc: ['codechef@vitbhopal.ac.in'],
+                      );
+                      await launch('$mailtoLink');
+                    } catch (e) {
+                      print(e);
+                    }
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 2.0, bottom: 2.0),
+                    child: Text(
+                      "contact us at codechef@vitbhopal.ac.in",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

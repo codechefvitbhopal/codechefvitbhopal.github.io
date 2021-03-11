@@ -21,7 +21,9 @@ dependencies:
   google_fonts: ^1.1.2
   html: ^0.14.0+4
   http: ^0.12.0+2
+  mailto: ^1.1.0
   responsive_grid: ^1.2.1+1
+  url_launcher: ^6.0.2
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,8 @@
 import 'package:ccvit/widgets/centeredView/centered_view.dart';
+import 'package:ccvit/widgets/divider.dart';
 import 'package:ccvit/widgets/theme_inherited_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import '../models/sheetModel.dart';
 import '../controller/sheetController.dart';
@@ -14,6 +16,7 @@ class LeaderBoarData extends StatefulWidget {
 }
 
 class _LeaderBoarDataState extends State<LeaderBoarData> {
+  ScrollController _scrollController;
   bool _loadingData = true;
   List<LeaderBoardModel> leaderBoardItems = <LeaderBoardModel>[];
 
@@ -21,6 +24,7 @@ class _LeaderBoarDataState extends State<LeaderBoarData> {
 
   @override
   void initState() {
+    _scrollController = ScrollController();
     super.initState();
     getLeaderBoardData();
   }
@@ -89,78 +93,85 @@ class _LeaderBoarDataState extends State<LeaderBoarData> {
                     ),
                   ),
                 ),
-                Container(
-                  height: 500,
-                  child: ListView.builder(
-                    itemCount: leaderBoardItems.length,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        margin: EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20.0),
-                          ),
-                          color: ThemeSwitcher.of(context).isDarkModeOn
-                              ? Colors.grey
-                              : Colors.white,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            leaderBoardItems[index].rank.isNotEmpty
-                                ? Container(
-                                    // margin: EdgeInsets.all(8.0),
-                                    padding: EdgeInsets.all(
-                                      20.0,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(20.0),
-                                        bottomLeft: Radius.circular(20.0),
-                                      ),
-                                      color: Colors.blue,
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        leaderBoardItems[index].rank,
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                : Container(),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: Text(leaderBoardItems[index].name),
+                ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxHeight: 500,
+                    maxWidth: 500,
+                  ),
+                  child: Scrollbar(
+                    controller: _scrollController,
+                    child: ListView.builder(
+                      controller: _scrollController,
+                      itemCount: leaderBoardItems.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          margin: EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20.0),
                             ),
-                            leaderBoardItems[index].score.isNotEmpty
-                                ? Container(
-                                    // margin: EdgeInsets.all(8.0),
-                                    padding: EdgeInsets.all(
-                                      20.0,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                        topRight: Radius.circular(20.0),
-                                        bottomRight: Radius.circular(20.0),
+                            color: ThemeSwitcher.of(context).isDarkModeOn
+                                ? Colors.grey
+                                : Colors.white,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              leaderBoardItems[index].rank.isNotEmpty
+                                  ? Container(
+                                      // margin: EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(
+                                        20.0,
                                       ),
-                                      color: Colors.blue,
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        leaderBoardItems[index].score,
-                                        style: TextStyle(
-                                          color: Colors.white,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(20.0),
+                                          bottomLeft: Radius.circular(20.0),
+                                        ),
+                                        color: Colors.blue,
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          leaderBoardItems[index].rank,
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  )
-                                : Container(),
-                          ],
-                        ),
-                      );
-                    },
+                                    )
+                                  : Container(),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(leaderBoardItems[index].name),
+                              ),
+                              leaderBoardItems[index].score.isNotEmpty
+                                  ? Container(
+                                      // margin: EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(
+                                        20.0,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.only(
+                                          topRight: Radius.circular(20.0),
+                                          bottomRight: Radius.circular(20.0),
+                                        ),
+                                        color: Colors.blue,
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          leaderBoardItems[index].score,
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  : Container(),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
               ],
@@ -177,6 +188,12 @@ class _LeaderBoarDataState extends State<LeaderBoarData> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 }
 

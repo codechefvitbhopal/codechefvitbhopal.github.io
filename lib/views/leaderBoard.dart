@@ -114,11 +114,13 @@ class _LeaderBoardViewState extends State<LeaderBoardView> {
                         image: Image.network(event[index].image),
                         viewResult: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => LeaderBoarData(
-                                        url: event[index].leaderBoadrdSheetLink,
-                                      )));
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => LeaderBoarData(
+                                url: event[index].leaderBoadrdSheetLink,
+                              ),
+                            ),
+                          );
                         },
                       ),
                     ),

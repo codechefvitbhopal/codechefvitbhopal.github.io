@@ -46,7 +46,7 @@ class HomeView extends StatelessWidget {
                   ThemeSwitcher.of(context).isDarkModeOn
                       ? Assets.events_dark
                       : Assets.events,
-                  scale: 2,
+                  scale: 4,
                 ),
               ),
               SizedBox(
@@ -66,20 +66,20 @@ class HomeView extends StatelessWidget {
       //       ),
       //     ),
       //   ),
-      floatingActionButton: Container(
-        height: ResponsiveWidget.isMobileScreen(context) ? 38 : 52,
-        child: FloatingActionButton(
-          onPressed: () {
-            ThemeSwitcher.of(context).switchDarkMode();
-          },
-          child: ThemeSwitcher.of(context).isDarkModeOn
-              ? Icon(FontAwesomeIcons.sun)
-              : Icon(
-                  FontAwesomeIcons.moon,
-                  size: ResponsiveWidget.isMobileScreen(context) ? 16 : 24,
-                ),
-        ),
-      ),
+      // floatingActionButton: Container(
+      //   height: ResponsiveWidget.isMobileScreen(context) ? 38 : 52,
+      //   child: FloatingActionButton(
+      //     onPressed: () {
+      //       ThemeSwitcher.of(context).switchDarkMode();
+      //     },
+      //     child: ThemeSwitcher.of(context).isDarkModeOn
+      //         ? Icon(FontAwesomeIcons.sun)
+      //         : Icon(
+      //             FontAwesomeIcons.moon,
+      //             size: ResponsiveWidget.isMobileScreen(context) ? 16 : 24,
+      //           ),
+      //   ),
+      // ),
     );
   }
 }

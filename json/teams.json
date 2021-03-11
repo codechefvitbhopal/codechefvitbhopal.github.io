@@ -11,8 +11,11 @@
         "linkedin": "",
         "github": "",
         "twitter": "",
-        "instagram":""
+        "instagram": ""
       }
+    },
+    {
+      "tag": "Core Team"
     },
     {
       "designation": "President",
@@ -25,7 +28,7 @@
         "linkedin": "",
         "github": "",
         "twitter": "v_surya_kumar",
-        "instagram":"surya.rar"
+        "instagram": "surya.rar"
       }
     },
     {
@@ -39,7 +42,7 @@
         "linkedin": "",
         "github": "",
         "twitter": "",
-        "instagram":"_akshatgoyal__"
+        "instagram": "_akshatgoyal__"
       }
     },
     {
@@ -69,6 +72,9 @@
       }
     },
     {
+      "tag": "Management Team"
+    },
+    {
       "designation": "Event & PR manager",
       "name": "Siddhant Singh",
 
@@ -79,7 +85,7 @@
         "linkedin": "",
         "github": "",
         "twitter": "",
-        "instagram":"siddhant3646"
+        "instagram": "siddhant3646"
       }
     },
     {
@@ -93,7 +99,7 @@
         "linkedin": "",
         "github": "",
         "twitter": "",
-        "instagram":"chirag_sharma365"
+        "instagram": "chirag_sharma365"
       }
     },
     {
@@ -107,7 +113,7 @@
         "linkedin": "",
         "github": "",
         "twitter": "",
-        "instagram":"arpitaaa01"
+        "instagram": "arpitaaa01"
       }
     },
     {
@@ -121,7 +127,7 @@
         "linkedin": "",
         "github": "",
         "twitter": "",
-        "instagram":"aadiramakrishnan"
+        "instagram": "aadiramakrishnan"
       }
     },
     {
@@ -138,62 +144,6 @@
       }
     },
     {
-      "designation": "Graphic Designer",
-      "name": "Laavart",
-
-      "imageURL": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/profile/laavart.jpg",
-      "bio": "",
-      "social": {
-        "medium": "",
-        "linkedin": "",
-        "github": "",
-        "twitter": "",
-        "instagram":"jaadu_s_ra_s_al_ghul"
-      }
-    },
-    {
-      "designation": "Graphic Designer",
-      "name": "ABHAY SINGH RANA",
-
-      "imageURL": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/profile/abhay.jpg",
-      "bio": "",
-      "social": {
-        "medium": "",
-        "linkedin": "",
-        "github": "",
-        "twitter": "",
-        "instagram":"iiabhayii"
-      }
-    },
-    {
-      "designation": "Technical Analyst",
-      "name": "Shivam Paliya",
-
-      "imageURL": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/profile/shivam.jpg",
-      "bio": "",
-      "social": {
-        "medium": "",
-        "linkedin": "",
-        "github": "",
-        "twitter": "",
-        "instagram":"shivam_paliya64"
-      }
-    },
-    {
-      "designation": "Technical Analyst",
-      "name": "Arushi  Jain",
-
-      "imageURL": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/profile/arushi.jpeg",
-      "bio": "",
-      "social": {
-        "medium": "",
-        "linkedin": "",
-        "github": "",
-        "twitter": "",
-        "instagram":"a_r_us_h_i"
-      }
-    },
-    {
       "designation": "Editorialist",
       "name": "Vaishnav Anil",
 
@@ -204,7 +154,7 @@
         "linkedin": "",
         "github": "",
         "twitter": "",
-        "instagram":"vsh_nv"
+        "instagram": "vsh_nv"
       }
     },
     {
@@ -218,7 +168,71 @@
         "linkedin": "",
         "github": "",
         "twitter": "",
-        "instagram":"vishesh_t27"
+        "instagram": "vishesh_t27"
+      }
+    },
+
+    {
+      "tag": "Graphic Team"
+    },
+    {
+      "designation": "Graphic Designer",
+      "name": "Laavart",
+
+      "imageURL": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/profile/laavart.jpg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "laavart",
+        "twitter": "laavart",
+        "instagram": "jaadu_s_ra_s_al_ghul"
+      }
+    },
+    {
+      "designation": "Graphic Designer",
+      "name": "ABHAY SINGH RANA",
+
+      "imageURL": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/profile/abhay.jpg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": "",
+        "instagram": "iiabhayii"
+      }
+    },
+
+    {
+      "tag": "Technical Team"
+    },
+    {
+      "designation": "Technical Analyst",
+      "name": "Shivam Paliya",
+
+      "imageURL": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/profile/shivam.jpg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": "",
+        "instagram": "shivam_paliya64"
+      }
+    },
+    {
+      "designation": "Technical Analyst",
+      "name": "Arushi  Jain",
+
+      "imageURL": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/profile/arushi.jpeg",
+      "bio": "",
+      "social": {
+        "medium": "",
+        "linkedin": "",
+        "github": "",
+        "twitter": "",
+        "instagram": "a_r_us_h_i"
       }
     },
     {
@@ -232,7 +246,7 @@
         "linkedin": "woinbo",
         "github": "woinbo",
         "twitter": "woinbo",
-        "instagram":"woinbo"
+        "instagram": "woinbo"
       }
     }
   ]

@@ -15,6 +15,7 @@ class Events extends StatelessWidget {
       height: 450,
       width: 450,
       child: Swiper(
+        autoplay: true,
         itemBuilder: (BuildContext context, int index) {
           return Container(
             margin: EdgeInsets.symmetric(vertical: 50),
