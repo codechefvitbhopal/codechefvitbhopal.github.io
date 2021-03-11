@@ -27,7 +27,7 @@ class _TeamViewState extends State<TeamView> {
   void initState() {
     super.initState();
     getTeamData(
-        "https://gist.githubusercontent.com/woinbo/78c767a60a12b23b827363d087b5fd79/raw/9b27caddb84bf1a9798f2e13c916f5449ba903b5/teams.json");
+        "https://gist.githubusercontent.com/woinbo/78c767a60a12b23b827363d087b5fd79/raw/ab5fb36df175cfe1fa139f76b90b19cd02bbe5b0/teams.json");
     // getTeamData("https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/json/teams.json");
   }
 

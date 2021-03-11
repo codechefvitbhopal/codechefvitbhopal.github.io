@@ -12,7 +12,7 @@ class Assets {
   static const events = 'assets/images/event.png';
   static const team = 'assets/images/team.png';
   static const article = 'assets/images/articles.png';
-  // static const leaderboard = 'assets/images/leaderboard.png';
+  static const leaderboard = 'assets/images/leaderboard.png';
   static const footer = 'assets/images/footer.png';
   static const header = 'assets/images/header.png';
   static const main = 'assets/images/main.png';

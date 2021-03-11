@@ -92,11 +92,9 @@ class _LeaderBoardViewState extends State<LeaderBoardView> {
               children: [
                 Container(
                   margin: EdgeInsets.only(bottom: 20),
-                  child: Text(
-                    "LeaderBoard",
-                    style: TextStyle(
-                      fontSize: 36.0,
-                    ),
+                  child: Image.asset(
+                    Assets.leaderboard,
+                    scale: 5,
                   ),
                 ),
                 ResponsiveGridRow(

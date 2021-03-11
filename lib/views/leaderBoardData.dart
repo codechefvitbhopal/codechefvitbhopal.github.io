@@ -1,3 +1,4 @@
+import 'package:ccvit/config/assets.dart';
 import 'package:ccvit/widgets/centeredView/centered_view.dart';
 import 'package:ccvit/widgets/divider.dart';
 import 'package:ccvit/widgets/theme_inherited_widget.dart';
@@ -86,11 +87,9 @@ class _LeaderBoarDataState extends State<LeaderBoarData> {
               children: [
                 Container(
                   margin: EdgeInsets.only(bottom: 20),
-                  child: Text(
-                    "LeaderBoard",
-                    style: TextStyle(
-                      fontSize: 36.0,
-                    ),
+                  child: Image.asset(
+                    Assets.leaderboard,
+                    scale: 5,
                   ),
                 ),
                 ConstrainedBox(
