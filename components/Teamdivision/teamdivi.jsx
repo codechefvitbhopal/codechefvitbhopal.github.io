@@ -5,7 +5,6 @@ import {FaGithubAlt} from "react-icons/fa"
 import {AiOutlineLinkedin} from "react-icons/ai"
 import { RiArrowDownSLine, RiArrowRightSLine } from "react-icons/ri";
 
-
 function Teamdivi(node) {
     const [expanded, setExpanded] = useState(true);
     return (
@@ -26,7 +25,7 @@ function Teamdivi(node) {
         <Profile>
         <Card>
            <Img>
-           <img src={member.profilepic} width="100%" height="100%"></img>
+           <img src={member.profilepic} width="100%" height="100%" className="imgClass"></img>
               <Description>
                   <DescriptionContent>
                    {member.description}
@@ -217,8 +216,15 @@ font-size:15px;}
     -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
     border: 3px solid #102E46;
+    object-fit: cover;
     position: relative;
     display:list-item;
+    float: left;
+    /* width:  300px; */
+    height: 400px;
+    img{
+      object-fit: cover;
+    }
 `;
 
   const DescriptionContent=styled.p`
