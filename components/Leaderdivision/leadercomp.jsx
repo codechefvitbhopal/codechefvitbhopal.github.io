@@ -5,6 +5,17 @@ import { RiArrowDownSLine, RiArrowRightSLine } from "react-icons/ri";
 function Leadercomp(node) {
    
     const [expanded, setExpanded] = useState(true);
+    const positionMedal = (pos) =>{
+        if(pos.includes("1st")){
+            return "🥇";
+        }
+        if(pos.includes("2nd")){
+            return "🥈";
+        }
+        if(pos.includes("3rd")){
+            return "🥉";
+        }
+    }
    
     return (
         <>
@@ -17,7 +28,7 @@ function Leadercomp(node) {
           {node.ranking.map((subnode)=>(
              <Card>
              <Details>
-                <Position>{subnode.position}</Position>
+                <Position>{subnode.position}&nbsp;{positionMedal(subnode.position)}</Position>
                 <Name> {subnode.name}</Name>
                 <Score> {subnode.score}</Score>
              </Details>

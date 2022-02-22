@@ -1,15 +1,45 @@
 {
     "events":[
         {
+            "eventname":"Codesque",
+            "ranking":[
+                {
+                    "position":"1st Place",
+                    "name":"Kunjan Gevariya",
+                    "score":"username: kunjan255"
+                },
+                {
+                    "position":"2nd Place",
+                    "name":"Anadi vyas",
+                    "score":"username: beastincarnat"
+                },
+                {
+                    "position":"3rd Place",
+                    "name":"Abhishek Bansal",
+                    "score":"username: abdevil"
+                },
+                {
+                    "position":"4th Place",
+                    "name":"Nikhil Choudhary",
+                    "score":"username: nikhil982000"
+                },
+                {
+                    "position":"5th Place",
+                    "name":"Arvin Jakhar",
+                    "score":"username: vin_ar"
+                }
+            ]
+        },
+        {
             "eventname":"Codeyessey",
             "ranking":[
                 {
-                    "position":"1st Place ",
+                    "position":"1st Place",
                     "name":"Harsh Agarwal",
                     "score":"username: harsh3125"
                 },
                 {
-                    "position":"2nd Place ",
+                    "position":"2nd Place",
                     "name":"Anuj Gupta",
                     "score":"username: anujj_guptaa"
                 },
