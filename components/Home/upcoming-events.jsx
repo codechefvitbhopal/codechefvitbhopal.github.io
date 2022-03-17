@@ -6,6 +6,9 @@ import {SiTwitter,SiInstagram,SiLinkedin} from "react-icons/si";
   
 
 export default function Upcoming() {
+    const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October","November", "December"];
+    let date = new Date();
+    //If contest date is passed remove upcoming img
     return (
         <>
         <style>
@@ -20,6 +23,7 @@ export default function Upcoming() {
                </Imag>
                 <Text style={{display:'flex',flexDirection:'column'}}>
                     <Event>{node.title}</Event>
+                    {/* Please put date in order i.e. inder 0->3 date(eg 03rd ) from 5th index the month*/}
                     <Time>{node.timing}</Time>
                     <Description>{node.description}</Description>
                     <Register>Register here: <a href={node.register} style={{color:'blue'}} target="_blank">{node.register}</a></Register>
