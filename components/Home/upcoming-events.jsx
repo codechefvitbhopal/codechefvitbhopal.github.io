@@ -27,6 +27,7 @@ export default function Upcoming() {
                     <Time>{node.timing}</Time>
                     <Description>{node.description}</Description>
                     <Register>Register here: <a href={node.register} style={{color:'blue'}} target="_blank">{node.register}</a></Register>
+                    <ContestLink>Contest link: <a href={node.contestLink} style={{color:'blue'}} target="_blank">{node.contestLink}</a></ContestLink>
                 </Text>
                 <Social>
                     <UpcomingE>
@@ -110,7 +111,7 @@ const Text = styled.div`
 const Time = styled.div`
     font-size:1.7rem;
     margin-top:0.6rem;
-    margin-bottom:2rem;
+    margin-bottom:1rem;
     font-weight:500;
     @media (max-width: 575px) {
         font-size:1.5rem;
@@ -125,9 +126,19 @@ const Description = styled.div`
 `;
 
 const Register = styled.div`
-      margin-top:2rem;
+      margin-top:1rem;
       font-size:1.5rem;
       font-weight:500;
+      @media (max-width: 575px) {
+        font-size:1.3rem;
+    }
+`;
+
+const ContestLink = styled.div`
+      margin-top: 1rem;
+      font-size:1.5rem;
+      font-weight:500;
+      margin-bottom: 1rem;
       @media (max-width: 575px) {
         font-size:1.3rem;
     }
@@ -186,6 +197,7 @@ const Imag =styled.div`
   width:100%;
   margin-left:1rem;
   overflow:hidden;
+  border-radius: 20px;
   @media (max-width: 575px) {
     width:100%;
     border-top-left-radius:10px;

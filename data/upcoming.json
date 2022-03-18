@@ -1,16 +1,17 @@
 {
     "upcoming":[
         {
-            "title":"Codesque",
-            "timing":"20th February 2022, 7:00-10:00 PM IST",
-            "poster":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/Events/Codesque.png",
-            "description":"Codechef VIT Bhopal chapter brings to you a captivating coding competition - CODESQUE on 20th February. Grab your seats with the free registrations and win exciting prizes.It will be all about exploring, discovering and seeing the bigger picture of your code with lots of fun and knowledge.",
+            "title":"CodeInvicta",
+            "timing":"20th March 2022, 9:00 PM-12:00 Am",
+            "poster":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/Events/CodeInvicta.png",
+            "description":"The four chapters of CodeChef at VIT – Vellore, Chennai, AP, and Bhopal are coming together to host the second edition of CodeInvicta from 19th – 20th March.The participants will have an opportunity to learn the ropes from an industry expert. It will be followed by another workshop where they get to learn something new. The event will end with a 3-hour coding competition where participants will have their skills tested in a one-of-its-kind coding environment.And don't forget the the cash price pool of ₹33000/-",
             "social":{
                 "linkedin":"",
-                "instagram":"https://www.instagram.com/p/CZ0qB-JIXqM/",
+                "instagram":"https://www.instagram.com/p/CbNYl_9s5z-/",
                 "twitter":""
             },
-            "register":"https://forms.gle/vMdTf7EA2QKLvn669"
+            "register":"https://forms.gle/x331veKjeojVCgr99",
+            "contestLink":"https://www.codechef.com/CDIV2022"
         }
     ]
 }
