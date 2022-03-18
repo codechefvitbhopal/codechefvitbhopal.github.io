@@ -228,7 +228,12 @@ font-weight: bold;
 transition: font-size .45s ease-in-out;
 transition: background .45s ease-in-out;
 transition: border .45s ease-in-out;
-
+    a{
+        color:white;
+        :hover{
+            color:#4a74f5;
+        }
+    }
     :hover{
         background: white;
         border:6px solid #4a74f5;
