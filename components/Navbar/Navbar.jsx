@@ -86,11 +86,13 @@ margin-right:15rem;
     margin:4%;
     padding:10px;
     font-weight:bolder;
-
   :hover{
     background:white;
     color:#0d6efd;
     border-radius:15px;
+    a{
+      color:#4a74f5;
+    }
     }
   
    &:active {
