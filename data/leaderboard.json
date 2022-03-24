@@ -1,6 +1,36 @@
 {
     "events":[
         {
+            "eventname":"Code Invicta",
+            "ranking":[
+                {
+                    "position":"1st Place",
+                    "name":"Kalash Gupta",
+                    "score":"username: kal013"
+                },
+                {
+                    "position":"2nd Place",
+                    "name":"Takuki Kurokawa",
+                    "score":"username: tabr"
+                },
+                {
+                    "position":"3rd Place",
+                    "name":"Tamonash Chakraborty",
+                    "score":"username: tamo11"
+                },
+                {
+                    "position":"4th Place",
+                    "name":"Vinay Omkumar Khilwani",
+                    "score":"username: vok_8"
+                },
+                {
+                    "position":"5th Place",
+                    "name":"Kude",
+                    "score":"username: kude"
+                }
+            ]
+        },
+        {
             "eventname":"Codesque",
             "ranking":[
                 {
