@@ -82,6 +82,7 @@ const UpcomingE =styled.div`
     top:0;
     margin-left:1rem;
     left:90%;
+    visibility: hidden;
     @media screen and (max-width:565px){
     display:none;
     margin-left:0rem;
