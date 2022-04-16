@@ -160,6 +160,10 @@ transition: display .35s ease-in-out;
   :hover{
       background:white;
       color:#0d6efd;
+      border-radius:15px;
+      a{
+      color:#4a74f5;
+    }
   }
 `;
 
