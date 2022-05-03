@@ -115,6 +115,10 @@ margin-right:15rem;
      margin-bottom:2px;
      margin-left:3rem;
 
+     @media  screen and (max-width: 850px) {
+        margin-left:0rem;
+        width:150px;
+    }
      @media  screen and (max-width: 768px) {
         margin-left:2rem;
         width:150px;
