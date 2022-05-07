@@ -1,3 +1,4 @@
+import anime from 'animejs/lib/anime.es.js';
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -225,10 +226,10 @@ margin: -4.5rem;
 padding: 1.2rem;
 font-size: 2.0rem;
 font-weight: bold;
-transition: font-size .45s ease-in-out;
+/* transition: font-size .45s ease-in-out;
 transition: background .45s ease-in-out;
-transition: border .45s ease-in-out;
-    a{
+transition: border .45s ease-in-out; */
+    /* a{
         color:white;
         :hover{
             color:#4a74f5;
@@ -239,7 +240,7 @@ transition: border .45s ease-in-out;
         border:6px solid #4a74f5;
         color:#4a74f5;
     }
-
+    */
     @media screen and (max-width:800px){
         margin:-2.5rem;
         padding:.7rem;
@@ -256,7 +257,7 @@ transition: border .45s ease-in-out;
         :hover{
             font-size:1.1rem;
         }
-    }
+    } 
 `; 
 
 export const HeaderImg = styled.div`
