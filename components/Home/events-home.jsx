@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Slide from 'react-reveal/Slide';
 import{Card,Button,Imag,TitleImg,DisplayFlex,Discription,ETitle,Details,LCard,Desktop,Mobile} from './styles';
 import events from "../../data/events.json"
 import {FaAngleDoubleLeft,FaAngleDoubleRight} from 'react-icons/fa'
@@ -64,8 +65,8 @@ export default function events_home() {
             </TitleImg>
             
             <DisplayFlex>
-                <Button onClick={previous} disabled={disableLeft}><FaAngleDoubleLeft /></Button>
-                <Desktop>{data.map((node)=><>{node.id == prev && (<LCard>
+            <Slide left><Button onClick={previous} disabled={disableLeft}><FaAngleDoubleLeft /></Button></Slide>
+                <Desktop>{data.map((node)=><>{node.id == prev && (<Slide left><LCard>
                         <Imag>
                            <img src={node.eventpic} width="100%" height="auto"  alt=""/>
                         </Imag>
@@ -79,7 +80,7 @@ export default function events_home() {
                             <div style={{color:'blue'}}><Link href="/Events">Read More</Link></div>
                         </LDetails>
                     </Discription>
-                    </LCard>)}
+                    </LCard></Slide>)}
                     
                     {node.id == middle && <Card>
                         <Imag>
@@ -97,7 +98,7 @@ export default function events_home() {
                     </Discription>
                     </Card>}
 
-                    {node.id == next && <LCard>
+                    {node.id == next && <Slide right><LCard>
                         <Imag>
                            <img src={node.eventpic} width="100%" height="auto" alt=""/>
                         </Imag>
@@ -112,7 +113,7 @@ export default function events_home() {
                             <div style={{color:'blue'}}><Link href="/Events">Read More</Link></div>
                         </LDetails>
                     </Discription>
-                    </LCard>}
+                    </LCard></Slide>}
                     </>
                     )}
                     </Desktop>
@@ -135,7 +136,7 @@ export default function events_home() {
                     </Card>)}
                     </Mobile>
 
-                {<Button onClick={nextevent} disabled={disableRight}><FaAngleDoubleRight /></Button>}
+                {<Slide right><Button onClick={nextevent} disabled={disableRight}><FaAngleDoubleRight /></Button></Slide>}
             </DisplayFlex>
         </EventHome>
     )
