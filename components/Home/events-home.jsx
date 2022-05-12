@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Slide from 'react-reveal/Slide';
 import{Card,Button,Imag,TitleImg,DisplayFlex,Discription,ETitle,Details,LCard,Desktop,Mobile} from './styles';
 import events from "../../data/events.json"
 import {FaAngleDoubleLeft,FaAngleDoubleRight} from 'react-icons/fa'
@@ -58,19 +57,17 @@ export default function events_home() {
     }
 
     return (
-
-        <EventHome style={{}}>
+<EventHome style={{}}>
             <TitleImg>
             <img src="/imageasset/events-heading.png" width="100%" height="auto"></img>
             </TitleImg>
-            
+
             <DisplayFlex>
-            <Slide left><Button onClick={previous} disabled={disableLeft}><FaAngleDoubleLeft /></Button></Slide>
-                <Desktop>{data.map((node)=><>{node.id == prev && (<Slide left><LCard>
+                <Button onClick={previous} disabled={disableLeft}><FaAngleDoubleLeft /></Button>
+                <Desktop>{data.map((node)=><>{node.id == prev && (<LCard>
                         <Imag>
                            <img src={node.eventpic} width="100%" height="auto"  alt=""/>
                         </Imag>
-
                     <Discription>
                         <ETitle>
                             {node.title}
@@ -80,13 +77,12 @@ export default function events_home() {
                             <div style={{color:'blue'}}><Link href="/Events">Read More</Link></div>
                         </LDetails>
                     </Discription>
-                    </LCard></Slide>)}
-                    
+                    </LCard>)}
+
                     {node.id == middle && <Card>
                         <Imag>
                            <img src={node.eventpic} width="100%" height="auto" alt=""/>
                         </Imag>
-
                     <Discription>
                         <ETitle>
                             {node.title}
@@ -98,11 +94,10 @@ export default function events_home() {
                     </Discription>
                     </Card>}
 
-                    {node.id == next && <Slide right><LCard>
+                    {node.id == next && <LCard>
                         <Imag>
                            <img src={node.eventpic} width="100%" height="auto" alt=""/>
                         </Imag>
-
                         
                     <Discription>
                         <ETitle>
@@ -113,17 +108,15 @@ export default function events_home() {
                             <div style={{color:'blue'}}><Link href="/Events">Read More</Link></div>
                         </LDetails>
                     </Discription>
-                    </LCard></Slide>}
+                    </LCard>}
                     </>
                     )}
                     </Desktop>
-
                     <Mobile>
                     {data.map((node)=>node.id == counter && <Card>
                         <Imag>
                            <img src={node.eventpic} width="100%" height="auto" alt=""/>
                         </Imag>
-
                     <Discription>
                         <ETitle>
                             {node.title}
@@ -136,7 +129,7 @@ export default function events_home() {
                     </Card>)}
                     </Mobile>
 
-                {<Slide right><Button onClick={nextevent} disabled={disableRight}><FaAngleDoubleRight /></Button></Slide>}
+                {<Button onClick={nextevent} disabled={disableRight}><FaAngleDoubleRight /></Button>}
             </DisplayFlex>
         </EventHome>
     )
