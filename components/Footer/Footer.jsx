@@ -1,4 +1,5 @@
 import React from "react";
+import Zoom from 'react-reveal/Zoom';
 import {
   SiDiscord,
   SiTwitter,
@@ -24,6 +25,7 @@ const Footer = () => (
       <Title>
         VIT BHOPAL CHAPTER
       </Title>
+      <Zoom top cascade>
       <Social>
       <a href="https://medium.com/codechef-vit-bhopal" target="_blank">
         <Icon style={{margin:".5rem"}}>
@@ -66,6 +68,7 @@ const Footer = () => (
         </Icon>
       </a>
       </Social>
+      </Zoom>
       <Copyright>© Copyright 2021 | CodeChef VIT Bhopal | All Rights Reserved</Copyright>
     </Flex>
     <Image>
