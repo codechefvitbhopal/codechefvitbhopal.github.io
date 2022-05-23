@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Flip from 'react-reveal/Flip';
 import styled from "styled-components";
 import {RiTwitterLine} from "react-icons/ri";
 import {FaGithubAlt} from "react-icons/fa"
@@ -24,6 +25,7 @@ function Teamdivi(node) {
         <div style={{display:"flex",justifyContent:"center",flexDirection:"column",alignItems:"center"}}>
         <Profile>
         <Card>
+           <Flip left> 
            <Img>
            <img src={member.profilepic} width="100%" height="100%" className="imgClass"></img>
               <Description>
@@ -32,6 +34,7 @@ function Teamdivi(node) {
                   </DescriptionContent>
               </Description>
            </Img>
+           </Flip>
         </Card>
          <Social>
             <div style={{marginBottom:".3rem"}}><a href={member.social.linkedin} target="_blank"><AiOutlineLinkedin fill="#102E46"/></a></div>

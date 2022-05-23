@@ -1,5 +1,4 @@
 import React from "react";
-import Zoom from 'react-reveal/Zoom';
 import {
   SiDiscord,
   SiTwitter,
@@ -25,7 +24,6 @@ const Footer = () => (
       <Title>
         VIT BHOPAL CHAPTER
       </Title>
-      <Zoom top cascade>
       <Social>
       <a href="https://medium.com/codechef-vit-bhopal" target="_blank">
         <Icon style={{margin:".5rem"}}>
@@ -68,8 +66,7 @@ const Footer = () => (
         </Icon>
       </a>
       </Social>
-      </Zoom>
-      <Copyright>© Copyright 2021 | CodeChef VIT Bhopal | All Rights Reserved</Copyright>
+      <Copyright>© Copyright 2022 | CodeChef VIT Bhopal | All Rights Reserved</Copyright>
     </Flex>
     <Image>
         <img src="/imageasset/chefgrad.png" alt="" width="auto" height="100%"></img>
@@ -97,7 +94,7 @@ const Title = styled.div`
 
 const Flex = styled.div`
   display: flex;
-  margin-top: 12rem;
+  margin-top:1.5rem;
   margin-left: 0.2rem;
   flex-direction:column;
   align-items:center;
@@ -105,12 +102,6 @@ const Flex = styled.div`
   flex-wrap:wrap;
   z-index:1;
   
-  @media screen and (min-width: 820px){
-    margin-top: 12rem;
-    margin-left:2rem;
-    align-items:unset;
-    justify-content:unset;
-}
   @media (max-width: 575px) {
     margin-top:2rem;
   }
@@ -214,18 +205,13 @@ const Image = styled.div`
     margin-top:0.5rem;
     margin-right:3rem;
   }
-  @media (max-width: 835px) {
-    height: 210px;
-    margin-top: 3.5rem;
-    margin-right: 3rem;
-  }
   @media (max-width: 768px) {
      display:none;
    }
 `;
 
 const Back = styled.img`
-    height: 437px;
+    height:400px;
     width:100%;
     display: list-item;
     @media (max-width: 767px) {

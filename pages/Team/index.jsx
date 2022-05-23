@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Flip from 'react-reveal/Flip';
 import styled from 'styled-components'
 import teamdata from "../../data/team.json"
 import '../../styles/Home.module.css'
@@ -11,7 +12,9 @@ const Team=()=>{
       <>
   <div style={{display:'flex',justifyContent:'center'}}>
   <Heading>
+  {/* <Flip left> */}
     <img src="/imageasset/Team.png" width="100%" height="auto"></img>
+    {/* </Flip> */}
   </Heading>
   </div>
   {teamdata['teammember'].map((node) => (
