@@ -1,0 +1,15 @@
+.nav {
+  background: linear-gradient(-45deg, #4a74f5, #2152eb, #0b2e9c, #1100a6);
+  animation: gradient 3s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

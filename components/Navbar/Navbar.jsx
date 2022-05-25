@@ -3,13 +3,14 @@ import Link from 'next/link'
 import styled from 'styled-components';
 import {GiHamburgerMenu} from 'react-icons/gi'
 import { ImCross } from "react-icons/im";
+import styles from "./Navbar.module.css"
 
 const Navbar = () =>{
 
   const[show,setshow]=useState(false);
   return(
     <>
-    <Nav>
+    <Nav className={styles.nav}>
     <Logo src="/imageasset/ccwhite2.png" />
     
     <MobNav>
@@ -45,7 +46,7 @@ const Navbar = () =>{
 const Nav = styled.div`
 position: sticky;
 display: flex;
-background:#4a74f5;
+
 top:0;
 left:0;
 flex-direction:row; 
@@ -53,6 +54,7 @@ justify-content: space-between;
 align-items:center;
 padding: 0.2rem;
 z-index: 12;
+
 `;
 
 
