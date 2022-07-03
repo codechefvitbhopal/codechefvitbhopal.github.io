@@ -18,11 +18,16 @@ const Navbar = () =>{
     </MobNav>
     
      <NavMenu>
-       <NavItem><Link href="/">Home</Link></NavItem>
-       <NavItem><Link href="/Events">Events</Link></NavItem>
-       <NavItem><Link href="/Articles">Articles</Link></NavItem>
-       <NavItem><Link href="/Team">Team</Link></NavItem>
-       <NavItem><Link href="/Leaderboard">LeaderBoard</Link></NavItem>
+       <NavItem className='pointerCursor'><Link href="/"><span className='pointerCursor'
+>Home</span></Link></NavItem>
+       <NavItem className='pointerCursor'><Link href="/Events"><span className='pointerCursor'
+>Events</span></Link></NavItem>
+       <NavItem className='pointerCursor'><Link href="/Articles"><span className='pointerCursor'
+>Articles</span></Link></NavItem>
+       <NavItem className='pointerCursor'><Link href="/Team"><span className='pointerCursor'
+>Team</span></Link></NavItem>
+       <NavItem className='pointerCursor'><Link href="/Leaderboard"><span className='pointerCursor'
+>LeaderBoard</span></Link></NavItem>
      </NavMenu>
      </Nav>
 

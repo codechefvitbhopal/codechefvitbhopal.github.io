@@ -26,24 +26,24 @@ export default function Upcoming() {
                     {/* Please put date in order i.e. inder 0->3 date(eg 03rd ) from 5th index the month*/}
                     <Time>{node.timing}</Time>
                     <Description>{node.description}</Description>
-                    <Register>Register here: <a href={node.register} style={{color:'blue'}} target="_blank">{node.register}</a></Register>
-                    <ContestLink>Contest link: <a href={node.contestLink} style={{color:'blue'}} target="_blank">{node.contestLink}</a></ContestLink>
+                    <Register>Register here: <a className='pointerCursor' href={node.register} style={{color:'blue'}} target="_blank">{node.register}</a></Register>
+                    <ContestLink>Contest link: <a className='pointerCursor' href={node.contestLink} style={{color:'blue'}} target="_blank">{node.contestLink}</a></ContestLink>
                 </Text>
                 <Social>
                     <UpcomingE>
                         <img src="/imageasset/ue.png" width="200px" height="200px" alt=""></img>
                     </UpcomingE>
-                   <a href={node.social.linkedin} target="_blank">
+                   <a className='pointerCursor' href={node.social.linkedin} target="_blank">
                         <Icon style={{margin:".5rem"}}>
                             <SiLinkedin color="#fff" />
                         </Icon>
                     </a>
-                   <a href={node.social.twitter} target="_blank">
+                   <a className='pointerCursor' href={node.social.twitter} target="_blank">
                         <Icon style={{margin:".5rem"}}>
                             <SiTwitter color="#fff" />
                         </Icon>
                     </a>
-                   <a href={node.social.instagram} target="_blank">
+                   <a className='pointerCursor' href={node.social.instagram} target="_blank">
                         <Icon style={{margin:".5rem"}}>
                             <SiInstagram color="#fff" />
                         </Icon>
@@ -158,7 +158,6 @@ const Icon = styled.div`
   transition: width .35s ease-in-out;
   transition: height .35s ease-in-out;
   &:hover {
-    cursor: pointer;
     width: 60px;
     height: 60px; 
   }
@@ -183,6 +182,9 @@ const Social = styled.div`
   //margin-left:6rem;
   flex-wrap:wrap;
   z-index:1;
+  a{
+    I
+  }
   @media (max-width: 991px) {
    margin-left:2rem;
   }

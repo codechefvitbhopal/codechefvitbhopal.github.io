@@ -25,42 +25,42 @@ const Footer = () => (
         VIT BHOPAL CHAPTER
       </Title>
       <Social>
-      <a href="https://medium.com/codechef-vit-bhopal" target="_blank">
+      <a className='pointerCursor' href="https://medium.com/codechef-vit-bhopal" target="_blank">
         <Icon style={{margin:".5rem"}}>
           <SiMedium color="#000" />
         </Icon>
       </a>
-      <a href="https://www.facebook.com/codechefvitbhopal/" target="_blank">
+      <a className='pointerCursor' href="https://www.facebook.com/codechefvitbhopal/" target="_blank">
         <Icon style={{margin:".5rem"}}>
           <SiFacebook color="#3b5999" />
         </Icon>
       </a>
-      <a href="https://twitter.com/codechefvitb" target="_blank">
+      <a className='pointerCursor' href="https://twitter.com/codechefvitb" target="_blank">
         <Icon style={{margin:".5rem"}}>
           <SiTwitter color="#55acee" />
         </Icon>
       </a>
-      <a href="https://www.instagram.com/codechefvitbhopal/" target="_blank">
+      <a className='pointerCursor' href="https://www.instagram.com/codechefvitbhopal/" target="_blank">
         <Icon style={{margin:".5rem"}}>
           <SiInstagram color="#e1306c" />
         </Icon>
       </a>
-      <a href="https://www.youtube.com/channel/UCnN2MXUF5ufqof-VSsXVn7Q"target="_blank">
+      <a className='pointerCursor' href="https://www.youtube.com/channel/UCnN2MXUF5ufqof-VSsXVn7Q"target="_blank">
         <Icon style={{margin:".5rem"}}>
           <SiYoutube color="#cd201f" />
         </Icon>
       </a>
-      <a href="https://github.com/codechefvitbhopal" target="_blank" >
+      <a className='pointerCursor' href="https://github.com/codechefvitbhopal" target="_blank" >
         <Icon style={{margin:".5rem"}}>
           <SiGithub color="#333" />
         </Icon>
       </a>
-      <a href="https://discord.gg/kSg6X4tFBx" target="_blank">
+      <a className='pointerCursor' href="https://discord.gg/kSg6X4tFBx" target="_blank">
         <Icon style={{margin:".5rem"}}>
           <SiDiscord color="#7289da" />
         </Icon>
       </a>
-      <a href="https://www.linkedin.com/company/codechefvitbhopal" target="_blank">
+      <a className='pointerCursor' href="https://www.linkedin.com/company/codechefvitbhopal" target="_blank">
         <Icon style={{margin:".5rem"}}>
           <SiLinkedin color="#0077b5" />
         </Icon>
@@ -125,7 +125,6 @@ const Icon = styled.div`
   transition: width .35s ease-in-out;
   transition: height .35s ease-in-out;
   &:hover {
-    cursor: pointer;
     box-shadow: white 0px 0px 10px 0px;  
   }
   @media (max-width: 991px) {

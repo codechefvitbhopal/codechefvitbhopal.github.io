@@ -23,33 +23,33 @@ function Events() {
           <Event>
             {++check % 2 != 0 && (
               <Card>
-                  <Img>
+                <Img>
                   <Fade left>
                     <Image src={node.eventpic} width="100%"></Image>
-                    </Fade>
-                  </Img>
-                  <Description>
+                  </Fade>
+                </Img>
+                <Description>
                   <Fade left>
                     <Title>{node.title}</Title>
                     <Details>{node.description}</Details>
-                    </Fade>
-                  </Description>
+                  </Fade>
+                </Description>
               </Card>
             )}
 
             {check % 2 == 0 && (
               <Cardrev>
-                  <Description>
+                <Description>
                   <Fade right>
                     <Title>{node.title}</Title>
                     <Details>{node.description}</Details>
-                    </Fade>
-                  </Description>
-                  <Img>
+                  </Fade>
+                </Description>
+                <Img>
                   <Fade right>
                     <Image src={node.eventpic} width="100%"></Image>
-                    </Fade>
-                  </Img>
+                  </Fade>
+                </Img>
               </Cardrev>
             )}
           </Event>
@@ -154,8 +154,10 @@ const Details = styled.div`
 
 const Img = styled.div`
   margin: 1rem;
+  padding: 10px;
 `;
 const Image = styled.img`
+  box-shadow: 5px 5px 20px #4a74f5;
   border-radius: 15px;
 `;
 

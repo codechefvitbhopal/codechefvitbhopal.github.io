@@ -5,6 +5,7 @@ body {
   /* background-color:#36454F; */
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  cursor: url("../svgs/cursor.svg"),auto;
 }
 body::-webkit-scrollbar {
   width: 5px;               /* width of the entire scrollbar */
@@ -26,4 +27,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.pointerCursor{
+  cursor: url("../svgs/handCursor.svg"),auto;
 }

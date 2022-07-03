@@ -8,7 +8,8 @@ export default function header() {
                <Img>
                    <img src="/imageasset/heading.png" width="100%" height="auto"></img>
                    </Img>
-                   <Signup><a href="https://www.codechef.com/college-chapter/member" target="_blank">SIGN UP</a></Signup>
+                   <Signup className='pointerCursor'><a href="https://www.codechef.com/college-chapter/member" target="_blank"><span className='pointerCursor'
+>SIGN UP</span></a></Signup>
                </HeaderImg>
         </Header>
     );

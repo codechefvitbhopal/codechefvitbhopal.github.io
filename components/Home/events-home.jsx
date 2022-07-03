@@ -65,7 +65,7 @@ export default function events_home() {
             </TitleImg>
             
             <DisplayFlex>
-            <Slide left><Button onClick={previous} disabled={disableLeft}><FaAngleDoubleLeft /></Button></Slide>
+            <Slide left><Button className='pointerCursor' onClick={previous} disabled={disableLeft}><FaAngleDoubleLeft /></Button></Slide>
                 <Desktop>{data.map((node)=><>{node.id == prev && (<Slide left><LCard>
                         <Imag>
                            <img src={node.eventpic} width="100%" height="auto"  alt=""/>
@@ -77,7 +77,7 @@ export default function events_home() {
                         </ETitle>
                         <LDetails>
                             {(node.description).length<=175?node.description:(node.description).substring(0,160)+" ......."}
-                            <div style={{color:'blue'}}><Link href="/Events">Read More</Link></div>
+                            <div style={{color:'blue'}}><Link href="/Events"><span className='pointerCursor'>Read More</span></Link></div>
                         </LDetails>
                     </Discription>
                     </LCard></Slide>)}
@@ -93,7 +93,7 @@ export default function events_home() {
                         </ETitle>
                         <Details>
                             {(node.description).length<=175?node.description:(node.description).substring(0,160)+" ......."}
-                            <div style={{color:'blue'}}><Link href="/Events">Read More</Link></div>
+                            <div style={{color:'blue'}}><Link href="/Events"><span className='pointerCursor'>Read More</span></Link></div>
                         </Details>
                     </Discription>
                     </Card>}
@@ -110,7 +110,7 @@ export default function events_home() {
                         </ETitle>
                         <LDetails>
                         {(node.description).length<=175?node.description:(node.description).substring(0,160)+" ......."}
-                            <div style={{color:'blue'}}><Link href="/Events">Read More</Link></div>
+                            <div style={{color:'blue'}}><Link href="/Events"><span className='pointerCursor'>Read More</span></Link></div>
                         </LDetails>
                     </Discription>
                     </LCard></Slide>}
@@ -136,7 +136,7 @@ export default function events_home() {
                     </Card>)}
                     </Mobile>
 
-                {<Slide right><Button onClick={nextevent} disabled={disableRight}><FaAngleDoubleRight /></Button></Slide>}
+                {<Slide right><Button className='pointerCursor' onClick={nextevent} disabled={disableRight}><FaAngleDoubleRight /></Button></Slide>}
             </DisplayFlex>
         </EventHome>
     )
