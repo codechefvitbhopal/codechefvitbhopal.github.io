@@ -14,7 +14,7 @@ function Teamdivi(node) {
             @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
         </style>
     <div style={{display:"block", width:"-webkit-fill-available", margin:"1rem 2rem"}}>
-      <HeaderStyled onClick={() => setExpanded(!expanded)}>
+      <HeaderStyled className='pointerCursor' onClick={() => setExpanded(!expanded)}>
       <TitleStyled>{node.category}</TitleStyled>
       {expanded ? <RiArrowDownSLine /> : <RiArrowRightSLine />}
       </HeaderStyled>
@@ -37,9 +37,9 @@ function Teamdivi(node) {
            </Flip>
         </Card>
          <Social>
-            <div style={{marginBottom:".3rem"}}><a href={member.social.linkedin} target="_blank"><AiOutlineLinkedin fill="#102E46"/></a></div>
-            <div style={{marginBottom:".3rem"}}><a href={member.social.github} target="_blank"><FaGithubAlt fill="#102E46"/></a></div>
-            <div style={{marginBottom:".3rem"}}><a href={member.social.twitter} target="_blank"><RiTwitterLine fill="#102E46"/></a></div>
+            <div style={{marginBottom:".3rem"}}><a className='pointerCursor' href={member.social.linkedin} target="_blank"><AiOutlineLinkedin fill="#102E46"/></a></div>
+            <div style={{marginBottom:".3rem"}}><a className='pointerCursor' href={member.social.github} target="_blank"><FaGithubAlt fill="#102E46"/></a></div>
+            <div style={{marginBottom:".3rem"}}><a className='pointerCursor' href={member.social.twitter} target="_blank"><RiTwitterLine fill="#102E46"/></a></div>
             <LineB style={{marginTop:".5rem",marginLeft:".6rem",width:"3px",background:"#102E46"}}></LineB>
          </Social>
          </Profile>
@@ -70,7 +70,6 @@ font-size: 2.2rem;
 -webkit-box-pack: justify;
 justify-content: space-between;
 align-itms:center;
-cursor: pointer;
 
 @media (max-width: 768px) {
     margin: 2rem;

@@ -20,7 +20,7 @@ function Leadercomp(node) {
     return (
         <>
     <div style={{display:"block", width:"-webkit-fill-available", margin:"1rem 2rem"}}>
-      <HeaderStyled onClick={() => setExpanded(!expanded)}>
+      <HeaderStyled className='pointerCursor' onClick={() => setExpanded(!expanded)}>
       <TitleStyled>{node.eventname}</TitleStyled>
       {expanded ? <RiArrowDownSLine /> : <RiArrowRightSLine />}
       </HeaderStyled>
@@ -106,7 +106,6 @@ margin:2% 5%;
 font-size: 2.2rem;
 -webkit-box-pack: justify;
 justify-content: space-between;
-cursor: pointer;
 
 @media (max-width: 768px) {
     margin: 2rem;
