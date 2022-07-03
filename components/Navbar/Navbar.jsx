@@ -43,9 +43,10 @@ const Navbar = () =>{
 };
 
 const Nav = styled.div`
+opacity: 0.9;
 position: sticky;
 display: flex;
-background:#4a74f5;
+background:#204cd4;
 top:0;
 left:0;
 flex-direction:row; 

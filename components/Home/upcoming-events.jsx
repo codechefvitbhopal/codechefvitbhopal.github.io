@@ -15,7 +15,7 @@ export default function Upcoming() {
             @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
         </style>
         <div style={{marginTop:'5rem',marginBottom:'6rem',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-            <Heading style={{fontFamily:'Lobster'}}>Be Ready For</Heading>
+            <Heading style={{fontFamily:'Lobster'}}>Most Recent Event</Heading>
             {upcoming['upcoming'].map((node)=>
             <Card>
                <Imag>
