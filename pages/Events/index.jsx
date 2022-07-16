@@ -19,7 +19,7 @@ function Events() {
         </Heading>
       </div>
       <DisplayFlex>
-        {events["events"].map((node) => (
+        {events["events"].reverse().map((node) => (
           <Event>
             {++check % 2 != 0 && (
               <Card>
