@@ -1,34 +1,34 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  /* background-color:#36454F; */
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  cursor: url("../svgs/cursor.svg"),auto;
+	padding: 0;
+	margin: 0;
+	/* background-color:#36454F; */
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	cursor: url('../svgs/cursor.svg'), auto;
 }
 body::-webkit-scrollbar {
-  width: 5px;               /* width of the entire scrollbar */
+	width: 10px; /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background:#4a74f5;
-  width:0px;        /* color of the tracking area */
+	background: #4a74f5;
+	width: 0px; /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color:white;    
-  border-radius: 20px;  
+	background-color: white;
+	border-radius: 20px;
 }
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-.pointerCursor{
-  cursor: url("../svgs/handCursor.svg"),auto;
+.pointerCursor {
+	cursor: url('../svgs/handCursor.svg'), auto;
 }
