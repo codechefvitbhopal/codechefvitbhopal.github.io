@@ -1,355 +1,355 @@
 {
-    "teammember":[
-              { 
-                  "category":"Faculty Coordinator",
-                  "members":[
-                    {
-                        "name":"Dr. S. Ananthakumaran",
-                        "title":"Faculty Coordinator",
-                        "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AnanthakumaranSir.jpeg",
-                        "description":"Loaded with an experience of over 19 years in teaching and research, Dr Ananthakumaran is always encouraging and ready to help his students. He has published 12 research articles indexed in SCOPUS and SCI journals, in areas concerning information security, soft computing techniques/algorithms, and mathematical modeling. Sir is also a lifetime member of CRSI. We look up to him as he steers this ship full of talent and energy, always guiding us to the a successful future.",
-                        "social":{
-                            "linkedin":"",
-                            "github":"",
-                            "twitter":""
-                        }
-                    }
-                  ]
-              },
+	"teammember": [
+		{
+			"category": "Faculty Coordinator",
+			"members": [
+				{
+					"name": "Dr. S. Ananthakumaran",
+					"title": "Faculty Coordinator",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AnanthakumaranSir.jpeg",
+					"description": "Loaded with an experience of over 19 years in teaching and research, Dr Ananthakumaran is always encouraging and ready to help his students. He has published 12 research articles indexed in SCOPUS and SCI journals, in areas concerning information security, soft computing techniques/algorithms, and mathematical modeling. Sir is also a lifetime member of CRSI. We look up to him as he steers this ship full of talent and energy, always guiding us to the a successful future.",
+					"social": {
+						"linkedin": "",
+						"github": "",
+						"twitter": ""
+					}
+				}
+			]
+		},
 
-              {
-                  "category":"Core Team",
-                  "members":[
-                    {
-                        "name":"Abhishek Patnigere",
-                        "title":"President",
-                        "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AbhishekPatnigere.jpg",
-                        "description":"He knows to Code, he knows to manage big events, he knows to do various outsourcing to take the club forward. He is a \"Jack of all trades but master of none\". He is our president Abhishek Patnigere",
-                        "social":{
-                            "linkedin":"",
-                            "github":"",
-                            "twitter":""
-                        }
-                    },
-                    {
-                       "name":"Vaibhav Joshi",
-                        "title":"Technical Lead",
-                        "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/VaibhavJoshi.jpg",
-                        "description":"You got to where you are by loving to solve problems, don't let that fire die out. Keep experimenting and continue to explore.",
-                        "social":{
-                            "linkedin":"https://www.linkedin.com/in/vjexe/",
-                            "github":"https://github.com/vjexe",
-                            "twitter":"https://twitter.com/vj_exe"
-                        } 
-                    },
-                    {
-                       "name":"Chirag Sharma",
-                        "title":"Management and Sponsorship Lead",
-                        "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/ChiragSharma.jpg",
-                        "description":"We at Codechef college chapter of VIT Bhopal aim to help everyone take their problem-solving skills as well as their competitive programming to the next level. And workshops and events are a great place to do this. Presenting Event & PR manager, Chirag Sharma.",
-                        "social":{
-                            "linkedin":"",
-                            "github":"",
-                            "twitter":""
-                        } 
-                    },
-                    {
-                       "name":"Manglam Tripathi",
-                        "title":"Social Media, Outreach and Graphics Lead",
-                        "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/ManglamTripathi.jpg",
-                        "description":"A good hold over social media platforms plays a vital role in nurturing and engaging with the audience. In order to effectively deliver our club's ideologies to you all, we present to you our Social Media, Outreach and Graphic Lead:- Manglam Tripathi.",
-                        "social":{
-                            "linkedin":"https://www.linkedin.com/in/manglam-tripathi/",
-                            "github":"https://github.com/manglam-tripathi",
-                            "twitter":""
-                        } 
-                    }
-                  ]
-              },
+		{
+			"category": "Core Team",
+			"members": [
+				{
+					"name": "Abhishek Patnigere",
+					"title": "President",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AbhishekPatnigere.jpg",
+					"description": "He knows to Code, he knows to manage big events, he knows to do various outsourcing to take the club forward. He is a \"Jack of all trades but master of none\". He is our president Abhishek Patnigere",
+					"social": {
+						"linkedin": "",
+						"github": "",
+						"twitter": ""
+					}
+				},
+				{
+					"name": "Vaibhav Joshi",
+					"title": "Technical Lead",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/VaibhavJoshi.jpg",
+					"description": "You got to where you are by loving to solve problems, don't let that fire die out. Keep experimenting and continue to explore.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/vjexe/",
+						"github": "https://github.com/vjexe",
+						"twitter": "https://twitter.com/vj_exe"
+					}
+				},
+				{
+					"name": "Chirag Sharma",
+					"title": "Management and Sponsorship Lead",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/ChiragSharma.jpg",
+					"description": "We at Codechef college chapter of VIT Bhopal aim to help everyone take their problem-solving skills as well as their competitive programming to the next level. And workshops and events are a great place to do this. Presenting Event & PR manager, Chirag Sharma.",
+					"social": {
+						"linkedin": "",
+						"github": "",
+						"twitter": ""
+					}
+				},
+				{
+					"name": "Manglam Tripathi",
+					"title": "Social Media, Outreach and Graphics Lead",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/ManglamTripathi.jpg",
+					"description": "A good hold over social media platforms plays a vital role in nurturing and engaging with the audience. In order to effectively deliver our club's ideologies to you all, we present to you our Social Media, Outreach and Graphic Lead:- Manglam Tripathi.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/manglam-tripathi/",
+						"github": "https://github.com/manglam-tripathi",
+						"twitter": ""
+					}
+				}
+			]
+		},
 
-              {
-                "category":"Technical Team",
-                "members":[
-                    {
-                        "name":"Anmol Verma",
-                         "title":"Web Developer",
-                         "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AnmolVerma.jpg",
-                         "description":"Don't get stuck in  Tutorial hell instead try to build real-time projects or applications and use dark theme as light attracts bugs!!!",
-                         "social":{
-                             "linkedin":"https://www.linkedin.com/in/anmol-verma-205182205/",
-                             "github":"https://github.com/AnmolVerma404",
-                             "twitter":"https://twitter.com/AnmolVe97231707"
-                         } 
-                     },
-                     {
-                        "name":"Monil Gandhi",
-                         "title":"Web Dev & CP Contest team",
-                         "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/MonilGandhi.jpeg",
-                         "description":"Opportunity of being a technical team member gives endownment to showcase the abilities of coding skills and in development world and also to learn along with it, henceforth it is a task of high responsibility and also to learn along with the team, and hence with perfect skills presenting you Monil Gandhi, Technical team, CodeChef VIT Bhopal.",
-                         "social":{
-                             "linkedin":"https://www.linkedin.com/in/monil-gandhi-73637a1b7/",
-                             "github":"https://github.com/Monil-007",
-                             "twitter":"https://twitter.com/MonilGandhi12"
-                         } 
-                     },
-                     {
-                        "name":"Devanshu Yadav",
-                         "title":"Editorialist",
-                         "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/DevanshuYadav.jpeg",
-                         "description":"Fits the description of a nerd, but is a Jack-of-all-trades. Sharp-witted, Cool and Altruistic. Meet our Eagle-Eyed Techie, Devanshu.",
-                         "social":{
-                             "linkedin":"https://www.linkedin.com/in/devanshu-yadav-1635991b4/",
-                             "github":"https://github.com/devanshuyadav",
-                             "twitter":"https://twitter.com/thevanshu_yadav"
-                         } 
-                     },
-                     {
-                        "name":"Samridhi Dubey",
-                         "title":"I deal with Competitive Programing section.",
-                         "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/SamridhiDubey.jpg",
-                         "description":"With an inspiration to guide young minds to excel in this field, I am an enthusiastic learner who deals with Competitive Programing mainly. Be it a heavy syntax error or a mere missed semi-colon, Samridhi Dubey from the Technical will help you out!",
-                         "social":{
-                             "linkedin":"https://www.linkedin.com/in/samridhi-dubey-4482551b9",
-                             "github":"https://github.com/SamridhiDubey",
-                             "twitter":""
-                         } 
-                     },
-                     {
-                        "name":"Niraj Patidar",
-                         "title":"Technical Team",
-                         "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/NirajPatidar.jpeg",
-                         "description":"Competetive programming enthusiast who loves to brainstorm through challenging problems and solves them using algorithmic skills.",
-                         "social":{
-                             "linkedin":"https://www.linkedin.com/in/niraj-patidar-59645a130",
-                             "github":"https://github.com/Niraj81",
-                             "twitter":"https://www.twitter.com/Niraj_py"
-                         } 
-                     },
-                     {
-                        "name":"Akshat Sharma",
-                         "title":"Web Developer",
-                         "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AkshatSharma.jpg",
-                         "description":"A little genius mixed with a lot of passion and determination defines me pretty well. I work with all the talented people here to manage this website you are on. You can count on me to help you with the technical stuff and meet the deadlines. I also crack jokes at the most serious of situations but hey, I get the job done!",
-                         "social":{
-                             "linkedin":"",
-                             "github":"https://github.com/akshats911",
-                             "twitter":"https://twitter.com/ded_insyd"
-                         } 
-                     }
-                ]
-              },
-              { 
-                "category":"Social Media, Outreach and Graphic Team",
-                "members":[
-                  {
-                      "name":"Aadira Ramakrishnan",
-                       "title":"Social Media and Outreach Team",
-                       "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AadiraRamakrishnan.jpeg",
-                       "description":"In a world with clichés, her methods are ingenious. She works hard and plays harder. She is ambitious, driven and always brings solutions to the table. We proudly present Aadira Ramakrishnan.",
-                       "social":{
-                           "linkedin":"https://www.linkedin.com/in/aadira-ramakrishnan-0694341a0/",
-                           "github":"https://github.com/aadiramakrishnan",
-                           "twitter":""
-                       } 
-                   },
-                   {
-                      "name":"Siddharth Jain",
-                       "title":"Social-Media and Graphic Team",
-                       "profilepic":"https://github.com/codechefvitbhopal/codechefvitbhopal.github.io/blob/master/images_2021_22/team/SiddharthJain.JPG?raw=true",
-                       "description":"Cheerful, dedicated, organized and methodical individual. Good with interpersonal skills, an excellent team worker, keen and very willing to learn and develop new skills. Reliable and dependable and often seek new responsibilities within a wide range of employment areas. Has an active and dynamic approach towards problem solving and getting things done. Determined, decisive and has ability to identify and develop innovative opportunities.",
-                       "social":{
-                           "linkedin":"",
-                           "github":"",
-                           "twitter":""
-                       } 
-                   },
-                   {
-                      "name":"Saksham Gupta",
-                       "title":"Social Media Team",
-                       "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/SakshamGupta.jpg",
-                       "description":"",
-                       "social":{
-                           "linkedin":"https://www.linkedin.com/in/saksham-g-3b2367218",
-                           "github":"",
-                           "twitter":""
-                       } 
-                   },
-                   {
-                      "name":"Abhinav Agrawal",
-                       "title":"Social Media and Outreach Team",
-                       "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AbhinavAgrawal.jpg",
-                       "description":"Experienced in Photoshop, Canva, EditorX and keen to learn more. Always ready to take task and tries to do it in given time. ",
-                       "social":{
-                           "linkedin":"https://www.linkedin.com/in/abhinav-agrawal-baa25821a",
-                           "github":"https://github.com/Abhinav5136",
-                           "twitter":"https://twitter.com/Abhinav17081405?t=jDmR8qSrgSkU9mW38-SLyA&s=09"
-                       } 
-                   },
-                   {
-                      "name":"Kritick Nayak",
-                       "title":"Social-Media Team",
-                       "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/KritickNayak.jpg",
-                       "description":"Equipped with cracked adobe software, and free tutorials on YouTube, His job is to add colors to our social media profiles.",
-                       "social":{
-                           "linkedin":"https://in.linkedin.com/in/kritick-nayak",
-                           "github":"https://github.com/KritickNayak",
-                           "twitter":""
-                       } 
-                   },
-                   {
-                      "name":"Jaideep Singh",
-                       "title":"Social media and Outreach Team",
-                       "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/JaideepSingh.jpg",
-                       "description":"A philonoist who loves to spread his knowledge with his peers and colleagues. Jaideep is a Java fanatic and is currently into mobile app development. He is also an open source enthusiast and was one of the top contributors of JAVA in GSWOC’21. His companionable personality makes him a great mentor and an even better friend who is always there to help when in need.",
-                       "social":{
-                           "linkedin":"",
-                           "github":"",
-                           "twitter":""
-                       } 
-                   }
-                ]
-            },
-            { 
-                "category":"Management and Sponsorship Team",
-                "members":[
-                  {
-                      "name":"Bhoomi Sharma",
-                       "title":"Management Team",
-                       "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/BhoomiSharma.jpeg",
-                       "description":"Filled with zeal for getting things done and a confident mindset in whatever she does, she is a valuable member of our team. Tech and management is where she shines. Eveready to have a joyous and fun event, with loads of knowledge, we are happy to have Bhoomi Sharma as a member of our management team.",
-                       "social":{
-                           "linkedin":"https://www.linkedin.com/in/bhoomi-sharma-bs2001/",
-                           "github":"https://github.com/bhoomii15",
-                           "twitter":"https://twitter.com/bhoomii_15"
-                       } 
-                   },
-                   {
-                      "name":"Muskan Jain",
-                       "title":"Management team",
-                       "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/MuskanJain.jpeg",
-                       "description":"I am an event manager and software engineer and  have professional experience on the field of organizing and management . I am adoptable to almost every surrounding and a eager learner.",
-                       "social":{
-                           "linkedin":"https://www.linkedin.com/in/muskan-jain-362aa8202",
-                           "github":"https://github.com/muskanniaj",
-                           "twitter":"https://mobile.twitter.com/MuskanJ29767920"
-                       } 
-                   },
-                   {
-                      "name":"Kartikey Khanna",
-                       "title":"Management and Sponsorship Team",
-                       "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/KartikeyKhanna.jpg",
-                       "description":"Kartikey, like the club's vision, is jam-packed with enthusiasm and a craving to assist others in any way he can. He also enjoys learning new things on a regular basis. Outside the club, he portrays himself as a web developer but is also passionate about machine learning and data science.",
-                       "social":{
-                           "linkedin":"https://www.linkedin.com/in/kartikeykhanna/",
-                           "github":"https://github.com/itsksquare",
-                           "twitter":"https://twitter.com/itsksquare19"
-                       } 
-                   },
-                   {
-                      "name":"Ananya Maitrayi Jha",
-                       "title":"Management and Sponsorship Team",
-                       "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AnanyaMaitrayiJha.jpg",
-                       "description":"Primed with a great zeal for connecting and organizing, and a pun-tastic vocabulary, she is here to explore, learn and make the most out of it. Mostly found with her nose in a book, drowning in coffee or adding colors to the blank canvas.",
-                       "social":{
-                           "linkedin":"https://www.linkedin.com/in/ananya-j-562664128",
-                           "github":"github.com/Ananya-Jha1208",
-                           "twitter":"https://twitter.com/AnanyaMJha1"
-                       } 
-                   },
-                   {
-                      "name":"Mohajit Paul",
-                       "title":"Management and Sponsorship Executive",
-                       "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/MohajitPaul.jpg",
-                       "description":"Management and Space are his main fortes with a particular niche for astrophysics. Always up for a good brainstorm session for new and interesting ideas for events to plan. Mohajit Paul plans to manage the executive team and give his interesting inputs for future events to come.",
-                       "social":{
-                           "linkedin":"https://www.linkedin.com/in/mohajit-paul-89434a201/",
-                           "github":"https://github.com/mohajit2711",
-                           "twitter":"https://twitter.com/18notsosavage"
-                       } 
-                   },
-                   {
-                      "name":"Kumari Aanchal",
-                       "title":"Management Team",
-                       "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/KumariAanchal.jpg",
-                       "description":"The perfect extrovert with a dash of humor and enthusiasm. Excels at getting work done at the last moment so you can say she is a pro at time management. Would help you if you ask for it with a smile.",
-                       "social":{
-                           "linkedin":"www.linkedin.com/in/aanchal-yadav-7313b6215",
-                           "github":"",
-                           "twitter":"https://twitter.com/Aanchal16182061"
-                       } 
-                   },
-                   {
-                      "name":"Gaurav Dawar",
-                       "title":"Executive Team",
-                       "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/GauravDawar.jpg",
-                       "description":"Organized and detail-oriented, Gaurav is someone you can trust to keep the team on track. He is dedicated, hardworking and resourceful, you can count on him to get the task done. We are grateful to have him be a part of the team, always available and willing to put in the work required.",
-                       "social":{
-                           "linkedin":"https://www.linkedin.com/in/gaurav-dawar/",
-                           "github":"https://github.com/gauravdawar08",
-                           "twitter":"https://twitter.com/Aanchal16182061"
-                       } 
-                   }
-                ]
-            },
-              {
-                "category":"Content Team",
-                "members":[
-                    {
-                        "name":"Denebola Biswas",
-                         "title":"Content writing",
-                         "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/Denebola_Biswas.jpeg",
-                         "description":"Dedicated and obedient to finish the task till it gets completed. Jolly and interactive to everyone and always inquisitive to learn. ",
-                         "social":{
-                             "linkedin":"https://www.linkedin.com/in/denebola-biswas-299b22201/",
-                             "github":"https://github.com/Dene2002",
-                             "twitter":""
-                         } 
-                     },
-                     {
-                        "name":"Gargi Singh",
-                         "title":"Content Writer",
-                         "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/Gargi_Singh.jpeg",
-                         "description":"A staunch believer of the power wielded by words, when not chasing assignment deadlines, she is often lost in the world of classical literature or trying to write code for a website about the same. Say hello to our content writer- Gargi. ",
-                         "social":{
-                             "linkedin":"http://linkedin.com/in/gargi-singh-1b9830222",
-                             "github":"https://github.com/Gargi1971",
-                             "twitter":""
-                         } 
-                     },
-                     {
-                        "name":"P.Harshitha Chowdary",
-                         "title":"Content Writer",
-                         "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/PurushothamHarshithaChowdary.jpeg",
-                         "description":"A writer, always filled with curiosity to learn and experiment new things. Love taking up challenging tasks . A true believer of smart work.",
-                         "social":{
-                             "linkedin":"https://www.linkedin.com/in/harshitha-purushotham-2225a2203/",
-                             "github":"https://github.com/pharshithachowdary",
-                             "twitter":"https://twitter.com/HarshithaPurus2"
-                         } 
-                     },
-                     {
-                        "name":"Vridhi Puri ",
-                         "title":"Content Writer",
-                         "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/VridhiPuri.jpg",
-                         "description":"Meet Vridhi Puri, a content writer at CodeChef, VIT Bhopal. Besides delivering quality content for the club to the best of her potential, this Bollywood fanatic will make you stand in awe of her writings while she romanticizes and tries to paint her fantasies through words.",
-                         "social":{
-                             "linkedin":"https://www.linkedin.com/in/vridhi-puri-375458208/",
-                             "github":"https://github.com/vridhipuri",
-                             "twitter":""
-                         } 
-                     },
-                     {
-                        "name":"Adithya N Biya",
-                         "title":"Content Writer",
-                         "profilepic":"https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AdithyaBiya.jpeg",
-                         "description":"With a mind proficient in manipulating words and an ideology of not resting until the task at hand is completed, Adithya brings these virtues of his to the content team of Codechef VIT. An avid reader since his younger days, Adithya indulges in 20th century literature, lyrically laden music and penning down his own brand of poetry from time to time.  ",
-                         "social":{
-                             "linkedin":"https://www.linkedin.com/in/adithya-n-biya-31830a209",
-                             "github":"https://github.com/adithyabiya",
-                             "twitter":""
-                         } 
-                     }
-                ]
-                }
-    ]
+		{
+			"category": "Technical Team",
+			"members": [
+				{
+					"name": "Anmol Verma",
+					"title": "Web Developer",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AnmolVerma.jpg",
+					"description": "Don't get stuck in  Tutorial hell instead try to build real-time projects or applications and use dark theme as light attracts bugs!!!",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/anmolverma404/",
+						"github": "https://github.com/AnmolVerma404",
+						"twitter": "https://twitter.com/anmolverma404"
+					}
+				},
+				{
+					"name": "Monil Gandhi",
+					"title": "Web Dev & CP Contest team",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/MonilGandhi.jpeg",
+					"description": "Opportunity of being a technical team member gives endownment to showcase the abilities of coding skills and in development world and also to learn along with it, henceforth it is a task of high responsibility and also to learn along with the team, and hence with perfect skills presenting you Monil Gandhi, Technical team, CodeChef VIT Bhopal.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/monil-gandhi-73637a1b7/",
+						"github": "https://github.com/Monil-007",
+						"twitter": "https://twitter.com/MonilGandhi12"
+					}
+				},
+				{
+					"name": "Devanshu Yadav",
+					"title": "Editorialist",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/DevanshuYadav.jpeg",
+					"description": "Fits the description of a nerd, but is a Jack-of-all-trades. Sharp-witted, Cool and Altruistic. Meet our Eagle-Eyed Techie, Devanshu.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/devanshu-yadav-1635991b4/",
+						"github": "https://github.com/devanshuyadav",
+						"twitter": "https://twitter.com/thevanshu_yadav"
+					}
+				},
+				{
+					"name": "Samridhi Dubey",
+					"title": "I deal with Competitive Programing section.",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/SamridhiDubey.jpg",
+					"description": "With an inspiration to guide young minds to excel in this field, I am an enthusiastic learner who deals with Competitive Programing mainly. Be it a heavy syntax error or a mere missed semi-colon, Samridhi Dubey from the Technical will help you out!",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/samridhi-dubey-4482551b9",
+						"github": "https://github.com/SamridhiDubey",
+						"twitter": ""
+					}
+				},
+				{
+					"name": "Niraj Patidar",
+					"title": "Technical Team",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/NirajPatidar.jpeg",
+					"description": "Competetive programming enthusiast who loves to brainstorm through challenging problems and solves them using algorithmic skills.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/niraj-patidar-59645a130",
+						"github": "https://github.com/Niraj81",
+						"twitter": "https://www.twitter.com/Niraj_py"
+					}
+				},
+				{
+					"name": "Akshat Sharma",
+					"title": "Web Developer",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AkshatSharma.jpg",
+					"description": "A little genius mixed with a lot of passion and determination defines me pretty well. I work with all the talented people here to manage this website you are on. You can count on me to help you with the technical stuff and meet the deadlines. I also crack jokes at the most serious of situations but hey, I get the job done!",
+					"social": {
+						"linkedin": "",
+						"github": "https://github.com/akshats911",
+						"twitter": "https://twitter.com/ded_insyd"
+					}
+				}
+			]
+		},
+		{
+			"category": "Social Media, Outreach and Graphic Team",
+			"members": [
+				{
+					"name": "Aadira Ramakrishnan",
+					"title": "Social Media and Outreach Team",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AadiraRamakrishnan.jpeg",
+					"description": "In a world with clichés, her methods are ingenious. She works hard and plays harder. She is ambitious, driven and always brings solutions to the table. We proudly present Aadira Ramakrishnan.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/aadira-ramakrishnan-0694341a0/",
+						"github": "https://github.com/aadiramakrishnan",
+						"twitter": ""
+					}
+				},
+				{
+					"name": "Siddharth Jain",
+					"title": "Social-Media and Graphic Team",
+					"profilepic": "https://github.com/codechefvitbhopal/codechefvitbhopal.github.io/blob/master/images_2021_22/team/SiddharthJain.JPG?raw=true",
+					"description": "Cheerful, dedicated, organized and methodical individual. Good with interpersonal skills, an excellent team worker, keen and very willing to learn and develop new skills. Reliable and dependable and often seek new responsibilities within a wide range of employment areas. Has an active and dynamic approach towards problem solving and getting things done. Determined, decisive and has ability to identify and develop innovative opportunities.",
+					"social": {
+						"linkedin": "",
+						"github": "",
+						"twitter": ""
+					}
+				},
+				{
+					"name": "Saksham Gupta",
+					"title": "Social Media Team",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/SakshamGupta.jpg",
+					"description": "",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/saksham-g-3b2367218",
+						"github": "",
+						"twitter": ""
+					}
+				},
+				{
+					"name": "Abhinav Agrawal",
+					"title": "Social Media and Outreach Team",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AbhinavAgrawal.jpg",
+					"description": "Experienced in Photoshop, Canva, EditorX and keen to learn more. Always ready to take task and tries to do it in given time. ",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/abhinav-agrawal-baa25821a",
+						"github": "https://github.com/Abhinav5136",
+						"twitter": "https://twitter.com/Abhinav17081405?t=jDmR8qSrgSkU9mW38-SLyA&s=09"
+					}
+				},
+				{
+					"name": "Kritick Nayak",
+					"title": "Social-Media Team",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/KritickNayak.jpg",
+					"description": "Equipped with cracked adobe software, and free tutorials on YouTube, His job is to add colors to our social media profiles.",
+					"social": {
+						"linkedin": "https://in.linkedin.com/in/kritick-nayak",
+						"github": "https://github.com/KritickNayak",
+						"twitter": ""
+					}
+				},
+				{
+					"name": "Jaideep Singh",
+					"title": "Social media and Outreach Team",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/JaideepSingh.jpg",
+					"description": "A philonoist who loves to spread his knowledge with his peers and colleagues. Jaideep is a Java fanatic and is currently into mobile app development. He is also an open source enthusiast and was one of the top contributors of JAVA in GSWOC’21. His companionable personality makes him a great mentor and an even better friend who is always there to help when in need.",
+					"social": {
+						"linkedin": "",
+						"github": "",
+						"twitter": ""
+					}
+				}
+			]
+		},
+		{
+			"category": "Management and Sponsorship Team",
+			"members": [
+				{
+					"name": "Bhoomi Sharma",
+					"title": "Management Team",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/BhoomiSharma.jpeg",
+					"description": "Filled with zeal for getting things done and a confident mindset in whatever she does, she is a valuable member of our team. Tech and management is where she shines. Eveready to have a joyous and fun event, with loads of knowledge, we are happy to have Bhoomi Sharma as a member of our management team.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/bhoomi-sharma-bs2001/",
+						"github": "https://github.com/bhoomii15",
+						"twitter": "https://twitter.com/bhoomii_15"
+					}
+				},
+				{
+					"name": "Muskan Jain",
+					"title": "Management team",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/MuskanJain.jpeg",
+					"description": "I am an event manager and software engineer and  have professional experience on the field of organizing and management . I am adoptable to almost every surrounding and a eager learner.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/muskan-jain-362aa8202",
+						"github": "https://github.com/muskanniaj",
+						"twitter": "https://mobile.twitter.com/MuskanJ29767920"
+					}
+				},
+				{
+					"name": "Kartikey Khanna",
+					"title": "Management and Sponsorship Team",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/KartikeyKhanna.jpg",
+					"description": "Kartikey, like the club's vision, is jam-packed with enthusiasm and a craving to assist others in any way he can. He also enjoys learning new things on a regular basis. Outside the club, he portrays himself as a web developer but is also passionate about machine learning and data science.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/kartikeykhanna/",
+						"github": "https://github.com/itsksquare",
+						"twitter": "https://twitter.com/itsksquare19"
+					}
+				},
+				{
+					"name": "Ananya Maitrayi Jha",
+					"title": "Management and Sponsorship Team",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AnanyaMaitrayiJha.jpg",
+					"description": "Primed with a great zeal for connecting and organizing, and a pun-tastic vocabulary, she is here to explore, learn and make the most out of it. Mostly found with her nose in a book, drowning in coffee or adding colors to the blank canvas.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/ananya-j-562664128",
+						"github": "github.com/Ananya-Jha1208",
+						"twitter": "https://twitter.com/AnanyaMJha1"
+					}
+				},
+				{
+					"name": "Mohajit Paul",
+					"title": "Management and Sponsorship Executive",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/MohajitPaul.jpg",
+					"description": "Management and Space are his main fortes with a particular niche for astrophysics. Always up for a good brainstorm session for new and interesting ideas for events to plan. Mohajit Paul plans to manage the executive team and give his interesting inputs for future events to come.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/mohajit-paul-89434a201/",
+						"github": "https://github.com/mohajit2711",
+						"twitter": "https://twitter.com/18notsosavage"
+					}
+				},
+				{
+					"name": "Kumari Aanchal",
+					"title": "Management Team",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/KumariAanchal.jpg",
+					"description": "The perfect extrovert with a dash of humor and enthusiasm. Excels at getting work done at the last moment so you can say she is a pro at time management. Would help you if you ask for it with a smile.",
+					"social": {
+						"linkedin": "www.linkedin.com/in/aanchal-yadav-7313b6215",
+						"github": "",
+						"twitter": "https://twitter.com/Aanchal16182061"
+					}
+				},
+				{
+					"name": "Gaurav Dawar",
+					"title": "Executive Team",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/GauravDawar.jpg",
+					"description": "Organized and detail-oriented, Gaurav is someone you can trust to keep the team on track. He is dedicated, hardworking and resourceful, you can count on him to get the task done. We are grateful to have him be a part of the team, always available and willing to put in the work required.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/gaurav-dawar/",
+						"github": "https://github.com/gauravdawar08",
+						"twitter": "https://twitter.com/Aanchal16182061"
+					}
+				}
+			]
+		},
+		{
+			"category": "Content Team",
+			"members": [
+				{
+					"name": "Denebola Biswas",
+					"title": "Content writing",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/Denebola_Biswas.jpeg",
+					"description": "Dedicated and obedient to finish the task till it gets completed. Jolly and interactive to everyone and always inquisitive to learn. ",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/denebola-biswas-299b22201/",
+						"github": "https://github.com/Dene2002",
+						"twitter": ""
+					}
+				},
+				{
+					"name": "Gargi Singh",
+					"title": "Content Writer",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/Gargi_Singh.jpeg",
+					"description": "A staunch believer of the power wielded by words, when not chasing assignment deadlines, she is often lost in the world of classical literature or trying to write code for a website about the same. Say hello to our content writer- Gargi. ",
+					"social": {
+						"linkedin": "http://linkedin.com/in/gargi-singh-1b9830222",
+						"github": "https://github.com/Gargi1971",
+						"twitter": ""
+					}
+				},
+				{
+					"name": "P.Harshitha Chowdary",
+					"title": "Content Writer",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/PurushothamHarshithaChowdary.jpeg",
+					"description": "A writer, always filled with curiosity to learn and experiment new things. Love taking up challenging tasks . A true believer of smart work.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/harshitha-purushotham-2225a2203/",
+						"github": "https://github.com/pharshithachowdary",
+						"twitter": "https://twitter.com/HarshithaPurus2"
+					}
+				},
+				{
+					"name": "Vridhi Puri ",
+					"title": "Content Writer",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/VridhiPuri.jpg",
+					"description": "Meet Vridhi Puri, a content writer at CodeChef, VIT Bhopal. Besides delivering quality content for the club to the best of her potential, this Bollywood fanatic will make you stand in awe of her writings while she romanticizes and tries to paint her fantasies through words.",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/vridhi-puri-375458208/",
+						"github": "https://github.com/vridhipuri",
+						"twitter": ""
+					}
+				},
+				{
+					"name": "Adithya N Biya",
+					"title": "Content Writer",
+					"profilepic": "https://raw.githubusercontent.com/codechefvitbhopal/codechefvitbhopal.github.io/master/images_2021_22/team/AdithyaBiya.jpeg",
+					"description": "With a mind proficient in manipulating words and an ideology of not resting until the task at hand is completed, Adithya brings these virtues of his to the content team of Codechef VIT. An avid reader since his younger days, Adithya indulges in 20th century literature, lyrically laden music and penning down his own brand of poetry from time to time.  ",
+					"social": {
+						"linkedin": "https://www.linkedin.com/in/adithya-n-biya-31830a209",
+						"github": "https://github.com/adithyabiya",
+						"twitter": ""
+					}
+				}
+			]
+		}
+	]
 }
